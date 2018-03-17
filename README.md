@@ -12,7 +12,7 @@ Hani Zahra / Brian Martinez / Julius Regalado / Scott Schorn March 19, 2018
 
 ## Entity Relationship Diagram
 
-![imagename](./assets/ERDiagram.png.png)
+![imagename](./assets/ERDiagram.png)
 
 ## Wireframe 
 
