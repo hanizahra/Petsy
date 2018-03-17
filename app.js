@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 const petFinder = require('./routes/petFinder');
+app.use('/petFinder', petFinder); //--this route is just for my testing purposes here in the back end.. --/api/petFinder will be the one executed to the front end
 app.use('/api/petFinder', petFinder);
 
 app.use('*', (req, res) => {
