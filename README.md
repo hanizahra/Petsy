@@ -23,10 +23,10 @@ Hani Zahra / Brian Martinez / Julius Regalado / Scott Schorn March 19, 2018
 ![imagename](./assets/trello.png)
 
 ## Technology
+![imagename](./assets/petfinder.png)
 	https://www.petfinder.com/developers/api-docs
 	Petfinder API 
 	  The Petfinder API gives developers access to Petfinder's database of over 300,000 adoptable pets and 11,000 animal welfare organizations (AWO). In addition to searching for adoptable pets on the Petfinder.com web site, you can use the API to create your own dynamic pet web sites or applications, using the same data we use on Petfinder.com.
-	  ![imagename](./assets/petfinder.png)
     features features features if team sanity/skill up to par
 
 ## Extras
