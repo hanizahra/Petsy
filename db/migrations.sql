@@ -28,5 +28,6 @@ CREATE TABLE animals (
   	shelter_pet_id INTEGER NOT NULL,
   	shelter_id INTEGER NOT NULL,
   	owner_id INTEGER REFERENCES owners,
+  	comments TEXT NULL,
   	date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );

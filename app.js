@@ -7,6 +7,7 @@ const bodyParser= require('body-parser');
 
 const app = express();
 
+//middlewares
 app.use(logger('dev'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -18,15 +19,15 @@ app.get('/', (req, res) => {
 
 const petFinder = require('./routes/petFinder');
 app.use('/petFinder', petFinder); //--this route is just for my testing purposes here in the back end.. --/api/petFinder will be the one executed to the front end
-app.use('/api/petFinder', petFinder);
+//app.use('/api/petFinder', petFinder);
 
 app.use('*', (req, res) => {
-  res.status(400).json({
-    message: 'yow page not found',
-  });
+  res.status(400).send(
+  	'yow page not found!!'
+  );
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
