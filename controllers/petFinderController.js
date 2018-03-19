@@ -21,10 +21,9 @@ module.exports = {
 	},
 
 	create(req,res,next) {
-		petFinderDB.create(req.body)
-			.then((petsCreate) => {
-				res.locals.petsCreate = petsCreate
-				res.redirect('/recipes')
+		 petFinderDB.create(req.body)
+			.then((animal) => {
+				res.locals.justAdded = animal
 				next()
 			})
 			.catch(err => {

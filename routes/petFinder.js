@@ -3,11 +3,13 @@ const router = require('express').Router();
 petFinderController = require('../controllers/petFinderController');
 viewsController = require('../controllers/viewsController');
 
-router.get('/', petFinderController.index, viewsController.indexPets);
+router.get('/', petFinderController.index, viewsController.testIndex);
 
-router.post('/', petFinderController.create);
+router.get('/add', viewsController.testAdd);
 
-router.get('/:id', petFinderController.showOne, viewsController.indexPets);
+router.post('/add', petFinderController.create, viewsController.handleTestAdd);
+
+router.get('/:id', petFinderController.showOne, viewsController.testIndex);
 /*
 router.put('/:id', petFinderController.update);
 router.delete('/:id', petFinderController.destroy);

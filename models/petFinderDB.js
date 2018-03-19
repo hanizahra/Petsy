@@ -36,7 +36,7 @@ module.exports = {
 	},
   	
   	create(animal) {
-  	return db.one(`s
+  	return db.one(`
     	INSERT INTO animals
     	(
     	name,
@@ -60,20 +60,21 @@ module.exports = {
       	$/name/,
       	$/animal/, 
       	$/sex/, 
-      	$/size/,)
-      	$/age/,)
-      	$/breed/,)
-      	$/mixed/,)
-      	$/special_needs/,)
-      	$/vaccines/,)
-      	$/kid_friendly/,)
-      	$/description/,)
-      	$/shelter_pet_id/,)
-      	$/special_id/,)
-      	$/owner_id/,)
-      	$/comments/,)
-      	RETURNING *
-      	`, animal
+      	$/size/,
+      	$/age/,
+      	$/breed/,
+      	$/mixed/,
+      	$/special_needs/,
+      	$/vaccines/,
+      	$/kid_friendly/,
+      	$/description/,
+      	$/shelter_pet_id/,
+      	$/shelter_id/,
+      	$/owner_id/,
+      	$/comments/
+      	)
+      	RETURNING *`, 
+      	animal
       	);  	
 	}
 };
