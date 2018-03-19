@@ -5,26 +5,8 @@ module.exports = {
 	findAll() {
     return db.many(`
       	SELECT 
-      	animals.id AS pet_id,
-        animals.name AS Pet_name, 
-        animal, 
-        sex,
-        age,
-        breed,
-        mixed,
-        special_needs,
-        vaccines,
-        kid_friendly,
-        description,
-        shelter_pet_id,
-        shelter_id,
-        comments,
-        owners.name AS owner,
-        owners.address AS address,
-        owners.city AS city,
-        owners.state AS state,
-        owners.email AS email
-        FROM animals JOIN owners ON animals.owner_id=owners.id
+      	*
+        FROM animals 
         `);
 	},
 
@@ -52,8 +34,12 @@ module.exports = {
     	description,
     	shelter_pet_id,
     	shelter_id,
-    	owner_id,
-    	comments
+    	owner_name,
+    	owner_phone,
+    	owner_address,
+    	owner_city,
+    	owner_state,
+    	owner_email
     	)
       	VALUES 
       	(
@@ -70,13 +56,23 @@ module.exports = {
       	$/description/,
       	$/shelter_pet_id/,
       	$/shelter_id/,
-      	$/owner_id/,
-      	$/comments/
+      	$/owner_name/,
+      	$/owner_phone/,
+      	$/owner_address/,
+      	$/owner_city/,
+      	$/owner_state/,
+      	$/owner_email/
       	)
       	RETURNING *`, 
       	animal
       	);  	
-	}
+	},
+	destroy(id) {
+    return db.none(`
+    	DELETE
+        FROM animals
+       	WHERE id = $1`, id);
+    }
 };
 
 

@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname,'views')) // dont mind this its just for te
 app.set('view engine', 'ejs') // dont mind this just for testing -julius
 
 app.get('/', (req, res) => {
-  res.send('Wassup this is the back end of petFinder root route! switch to client server for testing!');
+  res.send('Wassup this is the back end of petFinder root route! switch to client server -julius');
 });
 
 const petFinder = require('./routes/petFinder');

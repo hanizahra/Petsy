@@ -1,18 +1,20 @@
 const router = require('express').Router();
 
-petFinderController = require('../controllers/petFinderController');
+petsController = require('../controllers/petsController');
+commentsController = require('../controllers/commentsController');
 viewsController = require('../controllers/viewsController');
 
-router.get('/', petFinderController.index, viewsController.testIndex);
+router.get('/', petsController.index, commentsController.getAllComments);
 
-router.get('/add', viewsController.testAdd);
+router.post('/add', petsController.create);
+router.post('/comments/add', commentsController.createComment);
 
-router.post('/add', petFinderController.create, viewsController.handleTestAdd);
+router.get('/:id', petsController.showOne, commentsController.getAllComments);
 
-router.get('/:id', petFinderController.showOne, viewsController.testIndex);
-/*
-router.put('/:id', petFinderController.update);
-router.delete('/:id', petFinderController.destroy);
-*/
+router.put('/:id', commentsController.updateComment);
+
+router.delete('/:id', petsController.delete);
+router.delete('/comments/:id', commentsController.deleteComment);
+
 
 module.exports = router;

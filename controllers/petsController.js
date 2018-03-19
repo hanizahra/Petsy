@@ -1,9 +1,9 @@
-const petFinderDB = require('../models/petFinderDB')
+const petsDB = require('../models/petsDB')
 
 module.exports = {
 
 	index(req,res, next) {
-		petFinderDB.findAll()
+		petsDB.findAll()
 		.then((petsList)=> {
 			res.locals.petsList = petsList
 			next()
@@ -12,7 +12,7 @@ module.exports = {
 	},
 
 	showOne(req,res,next) {
-		petFinderDB.showOne(req.params.id)
+		petsDB.showOne(req.params.id)
 			.then((animal) => {
 				res.locals.animalShowOne = animal
 				next()
@@ -21,7 +21,7 @@ module.exports = {
 	},
 
 	create(req,res,next) {
-		 petFinderDB.create(req.body)
+		petsDB.create(req.body)
 			.then((animal) => {
 				res.locals.justAdded = animal
 				next()
@@ -29,7 +29,18 @@ module.exports = {
 			.catch(err => {
 				next(err)
 			})
-		console.log('yyoooooooo',req.body)
+		console.log('req.body of your form that you added',req.body)
 	},
+
+	delete(req,res,next) {
+		petsDB.destroy(req.params.id)
+			.then(()=> { 
+				res.redirect('/petFinder') 
+				next()
+			})
+			.catch(err => {
+				next(err)
+			})
+	}
 
 }
