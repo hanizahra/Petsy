@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Particles from 'react-particles-js'
-import Navigation from './components/Navigation/Navigation'
-import Home from './components/Home/Home'
-import PetsList from './components/PetsList/PetsList'
-import Pet from './components/Pet/Pet'
+import Homepage from './components/Homepage/Homepage';
+import RandomAnimal from './components/RandomAnimal';
+
+import Particles from 'react-particles-js';
+import Navigation from './components/Navigation/Navigation';
+import PetsList from './components/PetsList/PetsList';
+import Pet from './components/Pet/Pet';
 
 const particlesOptions = {
   particles: {
@@ -23,16 +25,18 @@ const particlesOptions = {
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <div>
           <Particles className='particles'
           params={particlesOptions} />
           <Navigation />
-          <Route exact path='/' component={Home} />
+
+          <Route exact path = '/' component={Homepage} />
+          <Route path = '/randomanimal' component = {RandomAnimal} />
           <Route path='/petslist' component={PetsList} />
           <Route path='/pet' component={Pet} />
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
