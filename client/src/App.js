@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Homepage from './components/Homepage/Homepage';
-import RandomAnimal from './components/RandomAnimal';
+import RandomAnimal from './components/RandomAnimal/RandomAnimal';
 
 import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
