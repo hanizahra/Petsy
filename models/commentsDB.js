@@ -4,17 +4,22 @@ module.exports = {
 
 	findAll() {
     return db.many(`
-      	SELECT 
-      	*
-        FROM comments
-        `);
-	},
+        SELECT 
+        comment, 
+        name, 
+        animal, 
+        pet_id,
+        FROM comments JOIN animals ON animals.id=comments.pet_id
+        ORDER BY recipes.recipe_name`);
+  },
 	create(comment) {
   	return db.one(`
       	INSERT INTO comments
-      	(comment)
+      	(comment,
+        pet_id)
       	VALUES 
-      	($/comment/)
+      	($/comment/,
+        $/pet_id/)
       	RETURNING *`, 
       	comment
       	);  	

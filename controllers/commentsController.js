@@ -6,7 +6,10 @@ module.exports = {
 		commentsDB.findAll()
 			.then((comments)=> {
 				res.locals.allComments = comments
-				next()
+				res.json({
+					message: 'ok',
+					commentsData: res.locals
+				})
 			})
 			.catch(err => {
 				next(err)
@@ -17,7 +20,6 @@ module.exports = {
 		commentsDB.create(req.body)
 			.then((comment) => {
 				res.locals.commentAdded = comment
-				res.redirect('/petFinder')
 				next()
 			})
 			.catch(err => {
@@ -40,7 +42,6 @@ module.exports = {
 	deleteComment(req,res,next) {
 		commentDB.destroy(req.params.id)
 			.then(()=> { 
-				res.redirect('/recipes') 
 				next()
 			})
 			.catch(err => {

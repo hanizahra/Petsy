@@ -6,7 +6,10 @@ module.exports = {
 		petsDB.findAll()
 		.then((petsList)=> {
 			res.locals.petsList = petsList
-			next()
+			res.json({
+					message: 'ok heres your pets list from the julius\' kick ass server',
+					petsData: res.locals
+				})
 		})
 		.catch(err=>{next(err)})
 	},
@@ -35,7 +38,6 @@ module.exports = {
 	delete(req,res,next) {
 		petsDB.destroy(req.params.id)
 			.then(()=> { 
-				res.redirect('/petFinder') 
 				next()
 			})
 			.catch(err => {

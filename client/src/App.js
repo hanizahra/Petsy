@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+
+import Particles from 'react-particles-js'
+import Navigation from './components/Navigation/Navigation'
+import Home from './components/Home/Home'
+import PetsList from './components/PetsList/PetsList'
+import Pet from './components/Pet/Pet'
+
+const particlesOptions = {
+  particles: {
+    line_linked: {
+      shadow: {
+        enable: true,
+        color: "#3CA9D1",
+        blur: 5
+      }
+    }
+  }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Particles className='particles'
+          params={particlesOptions} />
+          <Navigation />
+          <Route exact path='/' component={Home} />
+          <Route path='/petslist' component={PetsList} />
+          <Route path='/pet' component={Pet} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

@@ -4,7 +4,7 @@ petsController = require('../controllers/petsController');
 commentsController = require('../controllers/commentsController');
 viewsController = require('../controllers/viewsController');
 
-router.get('/', petsController.index, commentsController.getAllComments);
+router.get('/', petsController.index); //commentsController.getAllComments
 
 router.post('/add', petsController.create);
 router.post('/comments/add', commentsController.createComment);

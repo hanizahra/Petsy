@@ -4,7 +4,6 @@ const logger = require('morgan');
 const path = require('path');
 const methodOverride = require('method-override');
 const bodyParser= require('body-parser');
-const ejs = require('ejs');
 
 const app = express();
 
@@ -13,16 +12,14 @@ app.use(logger('dev'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.set('views', path.join(__dirname,'views')) // dont mind this its just for testing -julius
-app.set('view engine', 'ejs') // dont mind this just for testing -julius
 
 app.get('/', (req, res) => {
   res.send('Wassup this is the back end of petFinder root route! switch to client server -julius');
 });
 
 const petFinder = require('./routes/petFinder');
-app.use('/petFinder', petFinder); //--this route is just for my testing purposes here in the back end.. --/api/petFinder will be the one executed to the front end
-//app.use('/api/petFinder', petFinder);
+//app.use('/petFinder', petFinder);--this route is just for my testing purposes here in the back end.. --/api/petFinder will be the one executed to the front end
+app.use('/api/petFinder', petFinder);
 
 app.use('*', (req, res) => {
   res.status(400).send(

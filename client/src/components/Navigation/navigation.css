@@ -1,0 +1,10 @@
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav ul li {
+	list-style: none;
+	display: inline;
+	float: right;
+}
