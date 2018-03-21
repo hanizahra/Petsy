@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Homepage from './components/Homepage/Homepage';
 import RandomAnimal from './components/RandomAnimal/RandomAnimal';
+import ResultsAnimal from './components/ResultsAnimal/ResultsAnimal';
 
 import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
@@ -28,12 +29,13 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Particles className='particles'
-          params={particlesOptions} />
+         {/* <Particles className='particles'
+          params={particlesOptions} />*/}
           <Navigation />
 
           <Route exact path = '/' component={Homepage} />
           <Route path = '/randomanimal' component = {RandomAnimal} />
+          <Route path = '/results' component = {ResultsAnimal} />
           <Route path='/petslist' component={PetsList} />
           <Route path='/pet' component={Pet} />
           <Route path='/quiz' component={Quiz} />
