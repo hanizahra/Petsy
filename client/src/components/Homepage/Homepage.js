@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
+import ShareButton from 'react-social-share-buttons';
+
 
 class Homepage extends Component {
-	render() {
-		return (
-			<div>
-				<h1>Homepage</h1>
-				<p>Welcome, find random animals to adopt!</p><br/>
-				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Whats shaking? This pets tail! What you think?" data-hashtags="petsy" data-show-count="false">Tweet</a>
-				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br/>
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div>
+        <h1>Homepage</h1>
+        <p>Welcome, find random animals to adopt!</p><br/>
+        <ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adobt this cat"
+            />
+        <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            />
+      </div>
+    )
+  }
 }
 
 export default Homepage;
