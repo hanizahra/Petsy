@@ -9,6 +9,7 @@ import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
 import PetsList from './components/PetsList/PetsList';
 import Pet from './components/Pet/Pet';
+import Quiz from './components/Quiz/Quiz';
 
 const particlesOptions = {
   particles: {
@@ -35,6 +36,7 @@ class App extends Component {
           <Route path = '/randomanimal' component = {RandomAnimal} />
           <Route path='/petslist' component={PetsList} />
           <Route path='/pet' component={Pet} />
+          <Route path='/quiz' component={Quiz} />
         </div>
       </Router>
     );
