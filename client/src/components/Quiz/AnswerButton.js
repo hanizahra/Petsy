@@ -2,8 +2,8 @@ import React from 'react';
 
 const AnswerButton = (props) => {
 	return (
-		<button onClick={() => props.onAnswerSelection(props.questionIndex, props.answer)} >
-      {props.answer}
+		<button onClick={() => props.onAnswerSelection(props.questionIndex, props.answerValue)} >
+      {props.answerText}
     </button>
 	)
 }
