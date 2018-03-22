@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Container } from 'reactstrap';
 
 import Homepage from './components/Homepage/Homepage';
 import RandomAnimal from './components/RandomAnimal/RandomAnimal';
@@ -32,13 +33,14 @@ class App extends Component {
          {/* <Particles className='particles'
           params={particlesOptions} />*/}
           <Navigation />
-
-          <Route exact path = '/' component={Homepage} />
-          <Route path = '/randomanimal' component = {RandomAnimal} />
-          <Route path = '/results' component = {ResultsAnimal} />
-          <Route path='/petslist' component={PetsList} />
-          <Route path='/pet' component={Pet} />
-          <Route path='/quiz' component={Quiz} />
+          <Container fluid='True' className='mt-3'>
+            <Route exact path='/' component={Homepage} />
+            <Route path='/randomanimal' component = {RandomAnimal} />
+            <Route path='/results' component = {ResultsAnimal} />
+            <Route path='/petslist' component={PetsList} />
+            <Route path='/pet' component={Pet} />
+            <Route path='/quiz' component={Quiz} />
+          </Container>
         </div>
       </Router>
     );
