@@ -186,6 +186,7 @@ class RandomAnimal extends Component {
 					<p>State: {state} </p>
 					<p>Zipcode: {zipcode} </p>	
 					<p>Phone: {phone} </p>
+					<p>hi -from pet</p>
 
 				</div>
 				<button onClick={this.newAnimal}>New Pet</button>
