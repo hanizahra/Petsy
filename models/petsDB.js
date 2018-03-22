@@ -29,6 +29,7 @@ module.exports = {
     	breed,
     	mixed,
     	description,
+        photos,
     	shelter_pet_id,
     	shelter_id,
     	owner_phone,
@@ -37,27 +38,28 @@ module.exports = {
     	owner_state,
     	owner_email
     	)
-      	VALUES 
-      	(
-      	$/name/,
-      	$/animal/, 
-      	$/sex/, 
-      	$/size/,
-      	$/age/,
-      	$/breed/,
-      	$/mixed/,
-      	$/description/,
-      	$/shelter_pet_id/,
-      	$/shelter_id/,
-      	$/owner_phone/,
-      	$/owner_address/,
-      	$/owner_city/,
-      	$/owner_state/,
-      	$/owner_email/
-      	)
-      	RETURNING *`, 
-      	animal
-      	);  	
+    	VALUES 
+    	(
+    	$/name/,
+    	$/animal/, 
+    	$/sex/, 
+    	$/size/,
+    	$/age/,
+    	$/breed/,
+    	$/mixed/,
+    	$/description/,
+        $/photos/,
+    	$/shelter_pet_id/,
+    	$/shelter_id/,
+    	$/owner_phone/,
+    	$/owner_address/,
+    	$/owner_city/,
+    	$/owner_state/,
+    	$/owner_email/
+    	)
+    	RETURNING *`, 
+    	animal
+    	);  	
 	},
 	destroy(id) {
     return db.none(`

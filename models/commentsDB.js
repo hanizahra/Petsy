@@ -27,8 +27,7 @@ module.exports = {
       WHERE 
       comments.pet_id=$1`,
       id)
-  }
-
+  },
 	create(comment) {
   	return db.one(`
     	INSERT INTO comments

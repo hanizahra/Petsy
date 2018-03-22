@@ -30,6 +30,7 @@ render() {
         <h2>{this.props.pets.name}</h2>
         <p>{this.props.pets.animal}</p>
         <p>{this.props.pets.breed}</p>
+        <p>{this.props.pets.photos}</p>
         <p>{this.props.pets.id}</p>
         <Comments petId={this.props.pets.id}/>
         <button onClick={this.deletePet}>Delete</button>

@@ -11,23 +11,23 @@ class Comments extends Component {
 			fireRedirect: false
 		}
 	}
-	componentDidMount() {
-		apiServices.getAllCommentsForThisPet(this.props.petId)
-		.then(comments=> {
-		console.log(comments)
-			this.setState({
-				apiDataLoaded: true,
-				apiData: comments,
-				fireRedirect: true
-			})
-		})
-		.catch( err => {
-      		console.log('Oh no!!', err)
-    	});
-	}
-	renderComments() {
+	//componentDidMount() {
+	// 	apiServices.getAllCommentsForThisPet(this.props.petId)
+	// 	.then(comments=> {
+	// 	console.log(comments)
+	// 		this.setState({
+	// 			apiDataLoaded: true,
+	// 			apiData: comments,
+	// 			fireRedirect: true
+	// 		})
+	// 	})
+	// 	.catch( err => {
+ //      		console.log('Oh no!!', err)
+ //    	});
+	// }
+	// renderComments() {
 
-	}
+	// }
 
 	render() {
 		return(

@@ -21,7 +21,7 @@ module.exports = {
   		.then((comments) => {
   			res.locals.comments = comments
   				res.json({
-  					message: 'ok these are your comments for this pet from comments controller getAllCommentsForThisPet'
+  					message: 'ok these are your comments for this pet from comments controller getAllCommentsForThisPet',
   					commentsFromDb: res.locals
   				})
   			})

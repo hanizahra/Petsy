@@ -14,7 +14,7 @@ class PetsList extends Component {
   componentDidMount() {
    	apiServices.getAllPets()
       .then( pets => {
-      console.log(pets)
+      console.log('component did mount',pets)
       	this.setState({
         	apiDataLoaded: true,
           apiDataPets: pets.data.petsData.petsList,

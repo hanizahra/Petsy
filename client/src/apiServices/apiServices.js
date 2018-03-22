@@ -22,6 +22,7 @@ apiServices.addToPetsList = (pet) => {
       breed: pet.breeds,
       mixed: pet.mix,
       description: pet.description,
+      photos: pet.media.photos,
       shelter_pet_id: pet.shelterPetId,
       shelter_id: pet.shelterId,
       owner_phone: pet.contact.phone,
@@ -37,9 +38,9 @@ apiServices.deletePet = (id) => {
   return axios.delete(`/api/petFinder/${id}`);
 }
 // AXIOS CALLS FOR COMMENTS
-apiServices.getAllCommentsForThisPet = (id) => {
-  return axios.get(`/api/petFinder/comments/${id}`)  
-}
+// apiServices.getAllCommentsForThisPet = (id) => {
+//   return axios.get(`/api/petFinder/comments/${id}`)  
+// }
 
 // apiServices.addComments = (comment) => {
 //   axios({
