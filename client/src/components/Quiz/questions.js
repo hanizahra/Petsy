@@ -20,7 +20,7 @@ const questions = [
   },
   {
     key: "sex",
-    text: "What is the ideal sex for your new pet?",
+    text: "What is the ideal sex of your new pet?",
     answers: [
       ['M', 'male'],
       ['F', 'female'],
