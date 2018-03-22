@@ -7,26 +7,26 @@ class PetsList extends Component {
     super();
     this.state = {
       apiDataLoaded: false,
-      apiData: null
-    };
+      apiDataPets: null,
+      apiDataComments: null,
+    }
   };
   componentDidMount() {
    	apiServices.getAllPets()
     	.then( pets => {
       	this.setState({
         	apiDataLoaded: true,
-        	apiData: pets.data.petsData.petsList
+          apiDataPets: pets.data.petsData.petsList
       	})
     })
     .catch( err => {
       console.log('noooo', err)
     });
   };
-
   renderPets() {
     console.log('loaded data from julius\' kick ass server', this.state)
-        return this.state.apiData.map( (el, i) => {
-          return <Pet key={el.id} pets={el} />
+        return this.state.apiDataPets.map( (el, i) => {
+          return <Pet key={el.id} pets={el} petID={i} deletePet={this.deletePet}/>
         })
   }
   render() {

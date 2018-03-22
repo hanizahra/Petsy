@@ -25,26 +25,16 @@ class RandomAnimal extends Component {
 				this.setState({
 				 	pet: json['petfinder']['pet'] //JSON.stringify(json)
 				})
-				console.log(json['petfinder']['pet']);
+				console.log('data from petfinder api====>',json['petfinder']['pet']);
 			})
 			.catch(err => {
 				console.log(err.message)
 			})
 	}
 	addToPetsList() {
-		console.log(this.state.pet)
+		console.log('about to be added===>', this.state.pet)
 		apiServices.addToPetsList(this.state.pet)
-    	.then(pet => {
-      		this.setState({
-        	fireRedirect: true
-      	})
-      	console.log('made a thing happen!', pet)
-    	})
-    	.catch( err => {
-      		console.log('noooo', err)
-    	})
-		
-
+      	console.log('added to your kick ass database! ===>', this.state.pet)
 	}
 	render () {
 		let animal;

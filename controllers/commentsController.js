@@ -16,6 +16,18 @@ module.exports = {
 			})
 	},
 
+	getAllCommentsForThisPet(req,res,next) {
+  	commentsDB.getAllCommentsForThisPet(req.params.id)
+  		.then((comments) => {
+  			res.locals.commentsForThisPet = comments
+  				res.json({
+  					message: 'ok these are your comments for this pet from comments controller getAllCommentsForThisPet'
+  					commentsForThisPetData: res.locals
+  				})
+  			})
+  			.catch(err => next(err));
+  	},
+
 	createComment(req,res,next) {
 		commentsDB.create(req.body)
 			.then((comment) => {

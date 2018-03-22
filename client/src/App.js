@@ -29,8 +29,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-         {/* <Particles className='particles'
-          params={particlesOptions} />*/}
+          <Particles className='particles'
+          params={particlesOptions} />
           <Navigation />
 
           <Route exact path = '/' component={Homepage} />

@@ -12,6 +12,23 @@ module.exports = {
         FROM comments JOIN animals ON animals.id=comments.pet_id
         ORDER BY recipes.recipe_name`);
   },
+
+  getAllCommentsForThisPet(id) {
+    return db.any(`
+      SELECT 
+      comment, 
+      pet_id, 
+      FROM 
+      comments
+      JOIN 
+      animals
+      ON 
+      comments.pet_id=animals.id
+      WHERE 
+      animals.id=$1`,
+      id)
+  }
+
 	create(comment) {
   	return db.one(`
       	INSERT INTO comments
