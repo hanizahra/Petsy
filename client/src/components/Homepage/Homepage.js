@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ShareButton from 'react-social-share-buttons';
+import Social from '../Social/Social';
+
 
 
 class Homepage extends Component {
@@ -8,20 +9,7 @@ class Homepage extends Component {
       <div>
         <h1>Homepage</h1>
         <p>Welcome, find random animals to adopt!</p><br/>
-        <ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            />
-        <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            />
+        <Social />
       </div>
     )
   }
