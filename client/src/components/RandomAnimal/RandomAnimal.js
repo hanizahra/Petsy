@@ -34,6 +34,7 @@ class RandomAnimal extends Component {
 	addToPetsList() {
 		console.log('about to be added===>', this.state.pet)
 		apiServices.addToPetsList(this.state.pet)
+		alert('pet added to your favorites')
       	console.log('added to your kick ass database! ===>', this.state.pet)
 	}
 	render () {

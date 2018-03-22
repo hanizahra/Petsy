@@ -4,20 +4,20 @@ module.exports = {
 
 	findAll() {
     return db.many(`
-        SELECT 
-        comment, 
-        name, 
-        animal, 
-        pet_id,
-        FROM comments JOIN animals ON animals.id=comments.pet_id
-        ORDER BY recipes.recipe_name`);
+      SELECT 
+      comment, 
+      name, 
+      animal, 
+      pet_id,
+      FROM comments JOIN animals ON animals.id=comments.pet_id
+      ORDER BY recipes.recipe_name`);
   },
 
   getAllCommentsForThisPet(id) {
     return db.any(`
       SELECT 
-      comment, 
-      pet_id, 
+      comment,
+      pet_id 
       FROM 
       comments
       JOIN 
@@ -25,27 +25,27 @@ module.exports = {
       ON 
       comments.pet_id=animals.id
       WHERE 
-      animals.id=$1`,
+      comments.pet_id=$1`,
       id)
   }
 
 	create(comment) {
   	return db.one(`
-      	INSERT INTO comments
-      	(comment,
-        pet_id)
-      	VALUES 
-      	($/comment/,
-        $/pet_id/)
-      	RETURNING *`, 
-      	comment
-      	);  	
+    	INSERT INTO comments
+    	(comment,
+      pet_id)
+    	VALUES 
+    	($/comment/,
+      $/pet_id/)
+    	RETURNING *`, 
+    	comment
+    	);  	
     },
     update(recipe) {
   	return db.one(`
   		UPDATE comments
   		SET comment = $/comment/,
-      	pet_id = $/pet_id/
+      pet_id = $/pet_id/
   		WHERE id = $/id/
   		RETURNING *`,
       	comment

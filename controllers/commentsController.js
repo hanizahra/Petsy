@@ -19,10 +19,10 @@ module.exports = {
 	getAllCommentsForThisPet(req,res,next) {
   	commentsDB.getAllCommentsForThisPet(req.params.id)
   		.then((comments) => {
-  			res.locals.commentsForThisPet = comments
+  			res.locals.comments = comments
   				res.json({
   					message: 'ok these are your comments for this pet from comments controller getAllCommentsForThisPet'
-  					commentsForThisPetData: res.locals
+  					commentsFromDb: res.locals
   				})
   			})
   			.catch(err => next(err));
