@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import apiServices from '../../apiServices/apiServices';
 
 class RandomAnimal extends Component {
 
