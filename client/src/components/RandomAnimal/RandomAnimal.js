@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import apiServices from '../../apiServices/apiServices'
-
+import apiServices from '../../apiServices/apiServices';
 
 class RandomAnimal extends Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {
-			pet: null,
-			fireRedirect: false
+			pet: null
 		}
 		this.newAnimal = this.newAnimal.bind(this)
-		this.addToPetsList = this.addToPetsList.bind(this)
 	}
+
 	componentDidMount() {
 		this.newAnimal()
 	}
+
 	newAnimal() {
 		const randomAnimalUrl = 'http://api.petfinder.com/pet.getRandom?key=afd0c202e8bb93fc9c52f49d4a226b04&shelterid=&output=full&format=json';
+		
 		fetch(randomAnimalUrl)
 			.then(response => {
 				return response.json();
@@ -31,6 +32,7 @@ class RandomAnimal extends Component {
 				console.log(err.message)
 			})
 	}
+
 	addToPetsList() {
 		console.log('about to be added===>', this.state.pet)
 		apiServices.addToPetsList(this.state.pet)
@@ -100,6 +102,9 @@ class RandomAnimal extends Component {
 			} else {
 				newBreed = this.state.pet.breeds.breed['$t']
 			} 
+			
+
+
 
 			// console.log('Description --> ', this.state.pet.description['$t']);
 			description = this.state.pet.description['$t'];
@@ -128,7 +133,11 @@ class RandomAnimal extends Component {
 
 			} else {
 				options = 'none'
-			}
+			} 
+
+
+
+
 
 			// console.log('sex --> ', this.state.pet.sex['$t']);
 			sex = this.state.pet.sex['$t'];
@@ -156,6 +165,8 @@ class RandomAnimal extends Component {
 				photo = 'none';
 			}
 		}
+
+		
 		return (
 			<div>
 				<h1>Random animal up for adoption: </h1>
@@ -188,12 +199,14 @@ class RandomAnimal extends Component {
 					<p>Phone: {phone} </p>
 				</div>
 				<button onClick={this.newAnimal}>New Pet</button>
-				<button onClick={this.addToPetsList}>Add to Favoritos</button>
-				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-size="large" data-text="Whats shaking? This pets tail! What you think?" data-hashtags="petsy" data-show-count="false">Tweet</a>
-				<script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script><br/>
+				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Whats shaking? This pets tail! What you think?" data-hashtags="petsy" data-show-count="false">Tweet</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br/>
 			</div>
 			)
 	}
 }
+
+
+
 
 export default RandomAnimal
