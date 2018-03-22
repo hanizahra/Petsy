@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Jumbotron, Button } from 'reactstrap';
 import questions from 'components/Quiz/questions';
 import Question from 'components/Quiz/Question';
 import Result from 'components/Quiz/Result';
@@ -91,9 +92,9 @@ class Quiz extends Component {
 
     if (currentQuestion) {
       content = (
-        <Question question={currentQuestion}
-          questionIndex={this.state.currentQuestionIndex}
-          onAnswerSelection={this.handleAnswerSelection} />
+          <Question question={currentQuestion}
+            questionIndex={this.state.currentQuestionIndex}
+            onAnswerSelection={this.handleAnswerSelection} />
       );
     } else {
       if (this.state.results) {
@@ -105,15 +106,20 @@ class Quiz extends Component {
 
     if (this.state.currentQuestionIndex > 0) {
       backButton = (
-        <button onClick={this.handleBackButtonClick}>Go Back</button>
+        <div>
+          <Button onClick={this.handleBackButtonClick}>Go Back</Button>
+        </div>
       )
     }
 
     return (
       <div>
-        <h2>Quiz</h2>
-        {backButton}
-        {content}
+        <h1>Quiz</h1>
+        <hr/>
+        <Jumbotron className='bg-white'>
+          {content}
+          {backButton}
+        </Jumbotron>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Input, Button } from 'reactstrap';
 
 class AnswerTextForm extends Component {
   constructor() {
@@ -19,10 +20,10 @@ class AnswerTextForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input id="answer" name="answer" type="text" onChange={this.handleInputChange} />
-        <button>Submit</button>
-      </form>
+      <Form onSubmit={this.handleSubmit} inline>
+        <Input id="answer" name="answer" type="text" onChange={this.handleInputChange} />
+        <Button className='ml-2'>Submit</Button>
+      </Form>
     )
   }
 }

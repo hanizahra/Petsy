@@ -1,10 +1,14 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const AnswerButton = (props) => {
 	return (
-		<button onClick={() => props.onAnswerSelection(props.questionIndex, props.answerValue)} >
+		<Button onClick={() => props.onAnswerSelection(props.questionIndex, props.answerValue)}
+			className='text-left'
+			block
+			color='secondary' >
       {props.answerText}
-    </button>
+    </Button>
 	)
 }
 

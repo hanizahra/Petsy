@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import AnswerButton from 'components/Quiz/AnswerButton';
 import AnswerTextForm from 'components/Quiz/AnswerTextForm';
 
@@ -31,10 +32,14 @@ const Question = (props) => {
   }
 
 	return (
-		<div>
-      <p>{props.question.text}</p>
-      {answerInput}
-    </div>
+		<Container fluid>
+      <Row>
+        <Col sm='3'>
+          <p>{props.question.text}</p>
+          {answerInput}
+        </Col>
+      </Row>
+    </Container>
 	)
 }
 
