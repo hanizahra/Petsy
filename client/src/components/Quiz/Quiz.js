@@ -117,11 +117,6 @@ class Quiz extends Component {
             questionIndex={this.state.currentQuestionIndex}
             onAnswerSelection={this.handleAnswerSelection} />
       );
-      //remove line 99-103 once result page styled
-      this.setState({
-        currentQuestionIndex: questions.length,
-        answers: {location: '10023', animal: 'cat'}
-      })
     } else {
       if (this.state.results) {
         content = this.createResultsDisplay(this.state.results);
