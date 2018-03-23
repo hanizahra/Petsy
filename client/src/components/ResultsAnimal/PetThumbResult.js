@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col, Image, Thumbnail, Button} from 'react-bootstrap';
 
 
 class PetThumbResult extends Component {
@@ -40,6 +41,7 @@ class PetThumbResult extends Component {
 		let size;
 		let status;
 		let thumbnail = '';
+		let renderedThumb = '';
 
 		if (typeof this.props.pet != 'undefined') {
 			animal = this.props.pet.animal['$t'];
@@ -77,8 +79,18 @@ class PetThumbResult extends Component {
 				let photoLen = photos.length;
 				
 				for(;photoIdx < photoLen; photoIdx++) {
-					if(photos[photoIdx]['@size'] == 't') {
+					if(photos[photoIdx]['@size'] == 'pn') {
 						thumbnail = photos[photoIdx]['$t'];
+						renderedThumb = (
+							<Col xs={6} md={4}>
+						      <Thumbnail src={thumbnail} alt="242x200" responsive>
+						        <p>{name}</p>
+						        <p>
+						          <Button bsStyle="primary">Go to</Button>&nbsp;
+						          <Button bsStyle="default">Save</Button>
+						        </p>
+						      </Thumbnail>
+						    </Col>)
 						break;
 					}
 				}
@@ -87,9 +99,17 @@ class PetThumbResult extends Component {
 		
 		return (
 			<div className="pet-thumb-result" onClick={(evt) => this.showPetProfile(this.props.index)}>
-				<div><img src={thumbnail}/></div>
-				<div>{name}</div>
-			</div>)
+				{/*<div><img src={thumbnail}/></div>
+				<div>{name}</div>*/}
+				<Grid>
+				  <Row>
+				    
+				    {renderedThumb}
+				   
+				  </Row>
+				</Grid>
+			</div>
+		)
 		
 	}
 }

@@ -22,7 +22,7 @@ module.exports = {
   			res.locals.comments = comments
   				res.json({
   					message: 'ok these are your comments for this pet from comments controller getAllCommentsForThisPet',
-  					commentsFromDb: res.locals
+  					commentsData: res.locals
   				})
   			})
   			.catch(err => next(err));
@@ -32,7 +32,10 @@ module.exports = {
 		commentsDB.create(req.body)
 			.then((comment) => {
 				res.locals.commentAdded = comment
-				next()
+				res.json({
+  					message: 'ok these are your comments you just added',
+  					commentsData: res.locals
+  				})
 			})
 			.catch(err => {
 				next(err)
