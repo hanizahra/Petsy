@@ -1,35 +1,40 @@
 const questions = [
   {
     key: "location",
-    text: "Please enter your zip code.",
+    text: "Where would you like to search for your rescue?",
   },
   {
     key: "animal",
-    text: "What type of pet are you looking to rescue?",
-    answers: ['dog', 'cat', 'bird', 'reptile', 'horse', 'smallfurry', 'barnyard']
-  },
-  {
-    key: "size",
-    text: "What is the ideal size for your new pet?",
+    text: "What level of care are you able to provide to your rescue?",
     answers: [
-      ['S', 'small'],
-      ['M', 'medium'],
-      ['L', 'large'],
-      ['XL', 'extra large']
+      ['dog', 'Go for long walks around the block'],
+      ['cat', 'Cuddle at home on the couch'],
+      ['bird', 'Put newspaper down in a cage'],
+      ['reptile', 'Buy flies to feed my rescue'],
+      ['horse', 'Provide extensive grooming and maintenance'],
+      ['smallfurry', 'Buy a small crate that has a wheel to play on'],
+      ['barnyard', 'Lots of feeding and cleanup']
     ]
   },
   {
-    key: "sex",
-    text: "What is the ideal sex of your new pet?",
+    key: "size",
+    text: "Relative to your height, where would you like to your rescue to fall?",
     answers: [
-      ['M', 'male'],
-      ['F', 'female'],
+      ['S', 'Up to my ankle'],
+      ['M', 'Up to my knee'],
+      ['L', 'Up to my waist'],
+      ['XL', 'Up to my shoulders']
     ]
   },
   {
     key: "age",
-    text: "What is the ideal age for your new pet?",
-    answers: ['Baby', 'Young', 'Adult', 'Senior']
+    text: "What level of energy are you looking for in your rescue?",
+    answers: [
+      ['Baby', 'Loads of energy that never ends'],
+      ['Young', 'Growing out of it, but still ready to do a lot'],
+      ['Adult', 'Settled down a bit'],
+      ['Senior', 'Set in their way and super mellow']
+    ]
   },
 ];
 

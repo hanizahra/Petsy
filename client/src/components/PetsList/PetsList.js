@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Pet from './Pet';
 import apiServices from '../../apiServices/apiServices';
 import { Redirect } from 'react-router-dom';
+import ShareButton from 'react-social-share-buttons';
 
 class PetsList extends Component {
   constructor() {
@@ -34,6 +35,21 @@ class PetsList extends Component {
     return(
         <div>
           {this.state.apiDataLoaded ? this.renderPets() : ''}
+          <ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adobt this cat"
+            /> <br/>
+            
+            <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            />  
         </div>
       )
   }

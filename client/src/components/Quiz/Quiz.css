@@ -1,0 +1,11 @@
+.result-image-container {
+  height: 350px;
+  line-height: 350px;
+  overflow: hidden;
+  background: #efefef;
+  cursor: pointer;
+}
+
+.result-image-container img {
+  vertical-align: middle;
+}
