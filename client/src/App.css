@@ -39,11 +39,11 @@
 	-o-background-size: cover;
 }
 
-.form-group {
+/*.form-group {
   width: 50%;
   text-align: center;
   float: left;
-}
+}*/
 
 p {
 	text-align: center;
@@ -69,10 +69,10 @@ h1 {
 	text-align: center;
 }
 
-.well {
+/*.well {
 
 	width: 100%;
-}
+}*/
 
 
 
