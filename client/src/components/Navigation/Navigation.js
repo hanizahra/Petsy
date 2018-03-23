@@ -15,6 +15,7 @@ class Navigation extends Component {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		return(
 			<Navbar dark expand="md" color="dark">
 				<NavbarBrand href="/" className="mr-auto">Petsy</NavbarBrand>
@@ -55,6 +56,8 @@ class Navigation extends Component {
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
     return (
       <Navbar inverse collapseOnSelect>
@@ -80,6 +83,9 @@ class Navigation extends Component {
   }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
