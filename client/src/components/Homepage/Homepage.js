@@ -5,6 +5,9 @@ import Social from '../Social/Social';
 =======
 import ShareButton from 'react-social-share-buttons';
 import { PageHeader, Jumbotron, Button} from 'react-bootstrap';
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -12,11 +15,14 @@ class Homepage extends Component {
   render() {
     return (
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <div>
         <h1>Homepage</h1>
         <p>Welcome, find random animals to adopt!</p><br/>
         <Social />
 =======
+=======
+>>>>>>> Stashed changes
         <div>
             <Jumbotron bsClass = 'jumbotron'>
                 <h1>Petsy</h1>
@@ -44,6 +50,9 @@ class Homepage extends Component {
             />
 
             
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       </div>
 
