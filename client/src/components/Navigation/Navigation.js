@@ -24,25 +24,25 @@ class Navigation extends Component {
 			<Navbar dark expand="md" color="dark">
 				<NavbarBrand href="/" className="mr-auto">Petsy</NavbarBrand>
 				<NavbarToggler onClick={this.toggle} />
-	      <Collapse isOpen={this.state.isOpen} navbar>
-	        <Nav className="ml-auto" navbar>
-	          <NavItem>
-	            <NavLink href='/'>Home</NavLink>
-	          </NavItem>
+	      		<Collapse isOpen={this.state.isOpen} navbar>
+	        		<Nav className="ml-auto" navbar>
+	          			<NavItem>
+	            			<NavLink href='/'>Home</NavLink>
+	          			</NavItem>
 						<NavItem>
-	            <NavLink href='/randomanimal'>Random Animal</NavLink>
-	          </NavItem>
-	          <NavItem>
-	            <NavLink href='/results'>Animal Search</NavLink>
-	          </NavItem>
+	            			<NavLink href='/randomanimal'>Random Animal</NavLink>
+	          			</NavItem>
+	          			<NavItem>
+	            			<NavLink href='/results'>Animal Search</NavLink>
+	          			</NavItem>
 						<NavItem>
-	            <NavLink href="/petslist">Pets List</NavLink>
-	          </NavItem>
+	            			<NavLink href="/petslist">Pets List</NavLink>
+	          			</NavItem>
 						<NavItem>
-	            <NavLink href="/quiz">Quiz</NavLink>
-	          </NavItem>
-	        </Nav>
-	      </Collapse>
+	            			<NavLink href="/quiz">Quiz</NavLink>
+	          			</NavItem>
+	        		</Nav>
+	      		</Collapse>
 			</Navbar>
 		)
 		// <nav>

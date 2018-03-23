@@ -5,7 +5,7 @@ commentsController = require('../controllers/commentsController');
 viewsController = require('../controllers/viewsController');
 
 router.get('/', petsController.index)
-router.get('/comments/:id', commentsController.getAllComments)
+router.get('/comments/:id', commentsController.getAllCommentsForThisPet)
 
 router.post('/', petsController.create);
 router.post('/addComment', commentsController.createComment);

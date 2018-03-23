@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Pet from '../Pet/Pet';
+import Pet from './Pet';
 import apiServices from '../../apiServices/apiServices';
 import { Redirect } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ class PetsList extends Component {
   componentDidMount() {
    	apiServices.getAllPets()
       .then( pets => {
-      console.log('component did mount',pets)
+      console.log('component did mount fr PetsList',pets)
       	this.setState({
         	apiDataLoaded: true,
           apiDataPets: pets.data.petsData.petsList,
@@ -27,7 +27,7 @@ class PetsList extends Component {
   renderPets() {
     console.log('loaded data from julius\' kick ass server', this.state)
     return this.state.apiDataPets.map( (el, i) => {
-      return <Pet key={el.id} pets={el} petID={i} deletePet={this.deletePet}/>
+      return <Pet key={el.id} pets={el} petID={i} />
     })
   }
   render() {

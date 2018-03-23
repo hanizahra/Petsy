@@ -27,7 +27,10 @@ module.exports = {
 		petsDB.create(req.body)
 			.then((animal) => {
 				res.locals.justAdded = animal
-				next()
+				res.json({
+					message: 'ok heres your pets you just added',
+					petsData: res.locals.justAdded
+				})
 			})
 			.catch(err => {
 				next(err)

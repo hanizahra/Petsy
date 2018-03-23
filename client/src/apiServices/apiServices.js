@@ -38,19 +38,22 @@ apiServices.deletePet = (id) => {
   return axios.delete(`/api/petFinder/${id}`);
 }
 // AXIOS CALLS FOR COMMENTS
-// apiServices.getAllCommentsForThisPet = (id) => {
-//   return axios.get(`/api/petFinder/comments/${id}`)  
-// }
 
-// apiServices.addComments = (comment) => {
-//   axios({
-//     method: 'POST',
-//     url: '/petFinder/addComment'
-//     data: {
-//       comment
-//     }
-//   })
-// }
+ apiServices.getAllCommentsForThisPet = (id) => {
+  console.log('axios call for get getAllCommentsForThisPet===>', id)
+   return axios.get(`/api/petFinder/comments/${id}`)  
+}
+
+apiServices.addComment = (comment) => {
+  return axios({
+    method: 'POST',
+    url: '/api/petFinder/addComment',
+    data: {
+      comment: comment.comment,
+      pet_id: comment.pet_id
+    },
+  });
+};
 
 
 export default apiServices;

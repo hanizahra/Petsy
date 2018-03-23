@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'reactstrap';
+import Particles from 'react-particles-js';
 
 import Homepage from './components/Homepage/Homepage';
 import RandomAnimal from './components/RandomAnimal/RandomAnimal';
 import ResultsAnimal from './components/ResultsAnimal/ResultsAnimal';
-
-import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
 import PetsList from './components/PetsList/PetsList';
 import Pet from './components/Pet/Pet';
+import PetSingle from "components/PetsList/PetSingle"
 import Quiz from './components/Quiz/Quiz';
 
 const particlesOptions = {
@@ -33,13 +33,14 @@ class App extends Component {
           <Particles className='particles'
           params={particlesOptions} />
           <Navigation />
-          <Container fluid='True' className='mt-3'>
+          <Container fluid={true} className='mt-3'>
             <Route exact path='/' component={Homepage} />
             <Route path='/randomanimal' component = {RandomAnimal} />
             <Route path='/results' component = {ResultsAnimal} />
             <Route path='/petslist' component={PetsList} />
             <Route path='/pet' component={Pet} />
             <Route path='/quiz' component={Quiz} />
+            <Route path='/petsingle' component={PetSingle} />
           </Container>
         </div>
       </Router>

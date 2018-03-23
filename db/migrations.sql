@@ -27,6 +27,6 @@ CREATE TABLE animals (
 CREATE TABLE comments (
 	id SERIAL PRIMARY KEY,
 	comment TEXT,
-	pet_id INTEGER REFERENCES animals,
+	pet_id INTEGER REFERENCES animals ON DELETE CASCADE,
 	date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
