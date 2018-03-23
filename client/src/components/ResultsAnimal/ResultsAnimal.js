@@ -85,18 +85,12 @@ class ResultsAnimal extends Component {
 			animalType: evt.target.value
 		})
 	}
-
-
-
 	handleFormSubmit(e) {
 		e.preventDefault();
 	}
-	
-	showPetProfile = (petId) =>
-	{
+	showPetProfile = (petId) => {
 		this.setState({showProfile: petId});
 	}
-
 	backToResults = (evt) =>
 	{
 		evt.preventDefault();
@@ -182,7 +176,6 @@ class ResultsAnimal extends Component {
 						      	</FormControl>
 						    </FormGroup>
 						    <Button onClick={this.newAnimal}>Submit</Button>
-
 						    <FormGroup value={this.state.animalSex} onChange={this.setAnimalSex}>
 						      	<Radio name="radioGroup" inline value="F">
 						        	Female

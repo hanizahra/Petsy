@@ -42,12 +42,18 @@ module.exports = {
 	},
 
 	delete(req,res,next) {
+		console.log('deleting a thing', req.params.id)
 		petsDB.destroy(req.params.id)
 			.then(()=> { 
-				next()
+				console.log('deleted a thing')
+				res.json({
+					message: 'deleted a thing'
+				})
+				// next()
 			})
 			.catch(err => {
-				next(err)
+				console.log('did not delete a thing', err)
+				// next(err)
 			})
 	}
 
