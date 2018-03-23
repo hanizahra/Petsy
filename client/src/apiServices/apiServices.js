@@ -6,7 +6,7 @@ apiServices.getAllPets = () => {
 	return axios.get('/api/petFinder') 
 }
 apiServices.getOnePet = (id) => {
-	return axios.get(`/api/${id}`) 
+	return axios.get(`/api/petfinder/${id}`) 
 }
 
 apiServices.addToPetsList = (pet) => {

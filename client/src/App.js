@@ -9,7 +9,7 @@ import RandomAnimal from './components/RandomAnimal/RandomAnimal';
 import ResultsAnimal from './components/ResultsAnimal/ResultsAnimal';
 import Navigation from './components/Navigation/Navigation';
 import PetsList from './components/PetsList/PetsList';
-import Pet from './components/Pet/Pet';
+import Pet from './components/PetsList/Pet';
 import PetSingle from "components/PetsList/PetSingle"
 import Quiz from './components/Quiz/Quiz';
 
@@ -39,8 +39,8 @@ class App extends Component {
             <Route path='/results' component = {ResultsAnimal} />
             <Route path='/petslist' component={PetsList} />
             <Route path='/pet' component={Pet} />
+            <Route exact path='/petsingle/:id' component={PetSingle} />
             <Route path='/quiz' component={Quiz} />
-            <Route path='/petsingle' component={PetSingle} />
           </Container>
         </div>
       </Router>

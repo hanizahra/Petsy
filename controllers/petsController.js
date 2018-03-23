@@ -16,9 +16,12 @@ module.exports = {
 
 	showOne(req,res,next) {
 		petsDB.showOne(req.params.id)
-			.then((animal) => {
-				res.locals.animalShowOne = animal
-				next()
+			.then((pet) => {
+				res.locals.pet = pet
+				res.json({
+					message: 'ok here is your request for this pet',
+					dataShowOne: res.locals
+				})
 			})
 			.catch(err => next(err))
 	},

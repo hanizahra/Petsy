@@ -4,8 +4,8 @@ import AddComment from './AddComment';
 import EditComment from './EditComment';
 import DeleteComment from './DeleteComment';
 class Comments extends Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			apiDataLoaded: false,
 			apiDataComments: '',
@@ -30,7 +30,6 @@ class Comments extends Component {
 		return this.state.apiDataComments.map((el, i) => {
 			console.log('about to render fr apiDatcomments dot map', el)
 			return <li>{el.comment}</li>
-			
     	})	
 	}
 	render() {

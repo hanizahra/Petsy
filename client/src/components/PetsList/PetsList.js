@@ -13,7 +13,7 @@ class PetsList extends Component {
   };
   componentDidMount() {
    	apiServices.getAllPets()
-      .then( pets => {
+      .then(pets => {
       console.log('component did mount fr PetsList',pets)
       	this.setState({
         	apiDataLoaded: true,
@@ -27,7 +27,7 @@ class PetsList extends Component {
   renderPets() {
     console.log('loaded data from julius\' kick ass server', this.state)
     return this.state.apiDataPets.map( (el, i) => {
-      return <Pet key={el.id} pets={el} petID={i} />
+      return <Pet key={el.id} pets={el} />
     })
   }
   render() {
