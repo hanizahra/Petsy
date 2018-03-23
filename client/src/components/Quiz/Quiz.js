@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron, Button, Row, Col } from 'reactstrap';
 import questions from 'components/Quiz/questions';
 import Question from 'components/Quiz/Question';
 import Result from 'components/Quiz/Result';
+import ResultModal from 'components/Quiz/ResultModal';
+import 'components/Quiz/Quiz.css';
+import sampleSize from 'lodash/sampleSize';
 
 const petfinderApiUrl = 'http://api.petfinder.com';
 const petfinderApiKey = 'afd0c202e8bb93fc9c52f49d4a226b04';
@@ -28,6 +31,8 @@ class Quiz extends Component {
     }
     this.handleAnswerSelection = this.handleAnswerSelection.bind(this);
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+    this.handleModalOpen = this.handleModalOpen.bind(this);
+    this.handleModalToggle = this.handleModalToggle.bind(this);
   }
 
   handleAnswerSelection(questionIndex, answer) {
@@ -55,14 +60,14 @@ class Quiz extends Component {
       params['output'] = 'full';
       params['format'] = 'json';
       params['key'] = petfinderApiKey;
-      params['count'] = 9;
+      params['count'] = 45;
 
       let apiUrl = `${petfinderApiUrl}/pet.find?${objectToQueryString(params)}`;
       fetch(apiUrl).then(
         (response) => response.json()
       ).then((jsonResponse) => {
         if (jsonResponse.petfinder.pets) {
-          this.setState({results: jsonResponse.petfinder.pets.pet})
+          this.setState({results: sampleSize(jsonResponse.petfinder.pets.pet, 3)})
         } else {
           this.setState({results: []})
         }
@@ -72,14 +77,30 @@ class Quiz extends Component {
     }
   }
 
+  handleModalOpen(result) {
+    this.setState({ isModalOpen: true, modalResult: result });
+  }
+
+  handleModalToggle() {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
+  }
+
   createResultsDisplay(results) {
     // Create the thumbnails showing the results
     if (results.length > 0) {
-      return results.map((result) => {
+      let resultsThumbnails = results.map((result, index) => {
         return (
-          <Result key={result.id} result={result} />
+          <Result key={`${index}-${result.id}`}
+            result={result}
+            onResultClick={this.handleModalOpen} />
         )
       });
+
+      return (
+        <Row>
+          {resultsThumbnails}
+        </Row>
+      );
     } else {
       return (<p>Unfortunately, we could not find the best pet for you.</p>)
     }
@@ -96,6 +117,11 @@ class Quiz extends Component {
             questionIndex={this.state.currentQuestionIndex}
             onAnswerSelection={this.handleAnswerSelection} />
       );
+      //remove line 99-103 once result page styled
+      this.setState({
+        currentQuestionIndex: questions.length,
+        answers: {location: '10023', animal: 'cat'}
+      })
     } else {
       if (this.state.results) {
         content = this.createResultsDisplay(this.state.results);
@@ -120,6 +146,10 @@ class Quiz extends Component {
           {content}
           {backButton}
         </Jumbotron>
+        <ResultModal result={this.state.modalResult}
+          isOpen={this.state.isModalOpen}
+          onToggle={this.handleModalToggle} >
+        </ResultModal>
       </div>
     )
   }

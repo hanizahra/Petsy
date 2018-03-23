@@ -34,7 +34,7 @@ const Question = (props) => {
 	return (
 		<Container fluid>
       <Row>
-        <Col sm='3'>
+        <Col sm='5'>
           <p>{props.question.text}</p>
           {answerInput}
         </Col>
