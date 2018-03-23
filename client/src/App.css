@@ -18,7 +18,7 @@
 
 .pet-thumb-results-container {
 	margin-top:2rem;
-	width:50%;
+	width:100%;
 }
 .pet-thumb-result {
 	display:flex;
@@ -27,3 +27,54 @@
 	cursor:pointer;
 	margin-bottom:1rem;
 }
+
+.jumbotron {
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	background-image: url("https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&h=350");
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.form-group {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+p {
+	text-align: center;
+}
+
+.thumbnail {
+	float: left;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+	display: inline;
+}
+
+
+h1 {
+	text-align: center;
+}
+
+.well {
+
+	width: 100%;
+}
+
+
+
+
+
