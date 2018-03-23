@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import apiServices from '../../apiServices/apiServices'
-import Comments from '../Comments/Comments'
+import { Redirect } from 'react-router-dom';
+import apiServices from '../../apiServices/apiServices';
+import Comments from '../Comments/Comments';
 class PetSingle extends Component {
 	constructor(){
 		super();
@@ -17,13 +18,12 @@ class PetSingle extends Component {
 		.then(pet => {
 			console.log('getOnePet is here--->',pet)
 			this.setState({
-				apiDataLoaded: true,
 				apiData: pet.data.dataShowOne.pet
 			})
 		})
 	}
 	deletePet() {
-    console.log('deleting ===>', this.params.match.id)
+    console.log('deleting ===>', this.props.match.params.id)
     apiServices.deletePet(this.props.match.params.id)
 	.then((comment) => {
     	this.setState({
@@ -42,8 +42,9 @@ class PetSingle extends Component {
 			<p><strong>Pet's Name: </strong>{pet.name}</p>
 			<p><strong>Type: </strong>{pet.animal}</p>
 			<p><strong>Breed: </strong>{pet.breed}</p>
-			<p><strong>Hybrid: </strong>{pet.mixed}</p>
+			<p><strong>Mixes: </strong>{pet.mixed}</p>
 			<p><strong>Description: </strong>{pet.description}</p>
+			<p><strong>Description: </strong>{pet.photos}</p>
 			<p><strong>Owner's Address: </strong>{pet.owner_address}</p>
 			<p><strong>City: </strong>{pet.owner_city}</p>
 			<p><strong>State: </strong>{pet.owner_state}</p>
@@ -51,6 +52,7 @@ class PetSingle extends Component {
 			<p><strong>Id: </strong>{pet.id}</p>
 			<Comments petId={this.props.match.params.id}/>
           	<button onClick={this.deletePet}>Delete Pet</button>
+          	{this.state.fireRedirect ? <Redirect to='/' /> : ''}
 			</div>
 		)
 	}

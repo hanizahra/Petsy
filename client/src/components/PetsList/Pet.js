@@ -36,7 +36,7 @@ render() {
           <h2>Name:{this.props.pets.name}</h2>
           <p>Type:{this.props.pets.animal}</p>
           <p>Breed:{this.props.pets.breed}</p>
-          {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
+          
         </div>
     )
   }
