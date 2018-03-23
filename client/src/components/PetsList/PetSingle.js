@@ -44,7 +44,7 @@ class PetSingle extends Component {
 			<p><strong>Breed: </strong>{pet.breed}</p>
 			<p><strong>Mixes: </strong>{pet.mixed}</p>
 			<p><strong>Description: </strong>{pet.description}</p>
-			<p><strong>Description: </strong>{pet.photos}</p>
+			<p><strong>Photos: </strong>{pet.photos}</p>
 			<p><strong>Owner's Address: </strong>{pet.owner_address}</p>
 			<p><strong>City: </strong>{pet.owner_city}</p>
 			<p><strong>State: </strong>{pet.owner_state}</p>

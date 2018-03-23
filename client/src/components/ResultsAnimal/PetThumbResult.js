@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Thumbnail, Button} from 'react-bootstrap';
+import apiServices from '../../apiServices/apiServices';
 
 
 class PetThumbResult extends Component {
 
 	constructor(props) {
-		super(props);
+	super(props);
 		
+	this.addToPetsList = this.addToPetsList.bind(this)
 	}
-
 	showPetProfile = (petId) => {
 		this.props.showPetProfile(petId);
+	}
+
+	addToPetsList() {
+		console.log('about to be added===>', this.props)
+		apiServices.addToPetsList(this.props.pet)
+		alert('pet added to your favorites')
+      	console.log('added to your kick ass database! ===>', this.state.pet)
 	}
 
 	render () {
@@ -87,7 +95,7 @@ class PetThumbResult extends Component {
 						        <p>{name}</p>
 						        <p>
 						          <Button bsStyle="primary">Go to</Button>&nbsp;
-						          <Button bsStyle="default">Save</Button>
+						          <Button bsStyle="default" onClick={this.addToPetsList}>Save</Button>
 						        </p>
 						      </Thumbnail>
 						    </Col>)

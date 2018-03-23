@@ -32,8 +32,8 @@ deletePet() {
 render() {
   return (
         <div>
-          <Link to={`/petsingle/${this.props.pets.id}`}>See more</Link>
           <h2>Name:{this.props.pets.name}</h2>
+          <Link to={`/petsingle/${this.props.pets.id}`}>See more</Link>
           <p>Type:{this.props.pets.animal}</p>
           <p>Breed:{this.props.pets.breed}</p>
           
