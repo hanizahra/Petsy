@@ -9,13 +9,13 @@ class Navigation extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      isOpen: false
     };
   }
 
   toggleNavbar() {
     this.setState({
-      collapsed: !this.state.collapsed
+      isOpen: !this.state.isOpen
     });
   }
 
@@ -23,7 +23,7 @@ class Navigation extends Component {
 		return(
 			<Navbar dark expand="md" color="dark">
 				<NavbarBrand href="/" className="mr-auto">Petsy</NavbarBrand>
-				<NavbarToggler onClick={this.toggle} />
+				<NavbarToggler onClick={this.toggleNavbar} />
 	      <Collapse isOpen={this.state.isOpen} navbar>
 	        <Nav className="ml-auto" navbar>
 	          <NavItem>
@@ -45,15 +45,6 @@ class Navigation extends Component {
 	      </Collapse>
 			</Navbar>
 		)
-		// <nav>
-    //   <ul>
-		//     <li className='f3 link dim black underline pa3 pointer'><Link to='/'>Home</Link></li>
-    //     <li className='f3 link dim black underline pa3 pointer'><Link to='/randomanimal'>Random Animal</Link></li>
-		// 		<li className='f3 link dim black underline pa3 pointer'><Link to='/results'>Animal Search</Link></li>
-    //     <li className='f3 link dim black underline pa3 pointer'><Link to="/petslist">Pets List</Link></li>
-		// 		<li className='f3 link dim black underline pa3 pointer'><Link to="/quiz">Quiz</Link></li>
-    //   </ul>
-    // </nav>
 	}
 }
 
