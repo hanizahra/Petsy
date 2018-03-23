@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices';
-
+import ShareButton from 'react-social-share-buttons';
 class RandomAnimal extends Component {
 
 	constructor(props) {
@@ -201,6 +201,21 @@ class RandomAnimal extends Component {
 				</div>
 				<button onClick={this.newAnimal}>New Pet</button>
 				<button onClick={this.addToPetsList}>Add to Favoritos</button>
+				<ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adobt this cat"
+            /> <br/>
+            
+            <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            /> 
 			</div>
 			)
 	}

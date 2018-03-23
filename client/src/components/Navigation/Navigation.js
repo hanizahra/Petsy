@@ -6,7 +6,6 @@ import { Button, MenuItem, NavDropdown } from 'react-bootstrap';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 class Navigation extends Component {
-<<<<<<< HEAD
   constructor(props) {
     super(props);
 
@@ -49,7 +48,7 @@ class Navigation extends Component {
 			</Navbar>
 		)
 	}
-=======
+
   render() {
     return (
       <Navbar inverse collapseOnSelect>
@@ -73,7 +72,7 @@ class Navigation extends Component {
       </Navbar>
     )
   }
->>>>>>> 2f8a55d601e4123c38c1cd6f8a08437a5935c60e
+
 }
 
 export default Navigation
