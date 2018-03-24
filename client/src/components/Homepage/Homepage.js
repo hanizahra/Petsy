@@ -16,15 +16,13 @@ class Homepage extends Component {
                     <Button bsStyle="primary" href='/results'>Start Your Search!</Button>
 
                 </p>
-            </Jumbotron>
-
-            <ShareButton
+                <ShareButton
                 compact
                 socialMedia={'facebook'}
                 url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
                 media={"https://brianmartinezjtm.com"}
                 text="adobt this cat"
-            />
+            /> <br/>
             
             <ShareButton
                 compact
@@ -32,7 +30,10 @@ class Homepage extends Component {
                 url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
                 media={"https://brianmartinezjtm.com"}
                 text="adopt this dog"
-            />    
+            />   
+            </Jumbotron>
+
+             
       </div>
     )
   }
