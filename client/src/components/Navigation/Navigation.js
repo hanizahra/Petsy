@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import  './navigation.css'
 import { Link } from 'react-router-dom';
+import { Collapse, NavbarToggler, NavbarBrand,  NavLink } from 'reactstrap';
 import { Button, MenuItem, NavDropdown } from 'react-bootstrap';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
-
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
       isOpen: false
