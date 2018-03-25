@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PetResult from './PetResult';
 import PetThumbResult from './PetThumbResult';
 import PetCarousel from './Carousel';
-import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
+import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button, Pager } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons';
 
 class ResultsAnimal extends Component {
@@ -11,7 +11,7 @@ class ResultsAnimal extends Component {
 		super(props);
 		this.state = {
 			pets: [],
-			locationArg: '11215',
+			locationArg: '11211',
 			numResults : '5',
 			sizeResults : '',
 			animalSex : '',
@@ -219,9 +219,13 @@ class ResultsAnimal extends Component {
 		else {
 			return (
 				<div>
-					<a href="#" onClick={this.backToResults}>Go Back</a>
+					<Pager>
+					  	<Pager.Item previous onClick={this.backToResults}>
+					    	&larr; Previous Page
+					 	</Pager.Item>
+					</Pager>
 					<PetCarousel pet={this.state.pets[this.state.showProfile]}/>
-					<PetResult pet={this.state.pets[this.state.showProfile]}/>
+					<PetResult pet={this.state.pets[this.state.showProfile]} newAnimal={this.newAnimal}/>
 				</div>);
 		}
 
