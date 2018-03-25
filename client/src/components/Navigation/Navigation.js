@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import  './navigation.css'
 import { Link } from 'react-router-dom';
-import { Collapse, NavbarToggler, NavbarBrand,  NavLink } from 'reactstrap';
 import { Button, MenuItem, NavDropdown } from 'react-bootstrap';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
@@ -66,7 +65,7 @@ class Navigation extends Component {
           <NavItem eventKey={3} href='/results'>Animal Search</NavItem>
           <NavItem eventKey={4} href="/petslist">Pets List</NavItem>
           <NavItem eventKey={5} href="/quiz">Quiz</NavItem>
-          
+
         </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { Grid } from 'react-bootstrap';
 import Particles from 'react-particles-js';
 
 import Homepage from './components/Homepage/Homepage';
@@ -33,7 +33,7 @@ class App extends Component {
           <Particles className='particles'
           params={particlesOptions} />
           <Navigation />
-          <Container fluid className='mt-3'>
+          <Grid fluid className='mt-3'>
             <Route exact path='/' component={Homepage} />
             <Route path='/randomanimal' component = {RandomAnimal} />
             <Route path='/results' component = {ResultsAnimal} />
@@ -41,7 +41,7 @@ class App extends Component {
             <Route path='/pet' component={Pet} />
             <Route exact path='/petsingle/:id' component={PetSingle} />
             <Route path='/quiz' component={Quiz} />
-          </Container>
+          </Grid>
         </div>
       </Router>
     );
