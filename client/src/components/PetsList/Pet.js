@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import apiServices from '../../apiServices/apiServices';
 import { BrowserRouter, Redirect, Route, Link } from 'react-router-dom';
-import ShareButton from 'react-social-share-buttons';
+
 import Comments from '../Comments/Comments';
 import PetSingle from './PetSingle';
 
@@ -37,21 +37,7 @@ render() {
           <p>Type:{this.props.pets.animal}</p>
           <p>Breed:{this.props.pets.breed}</p>
           {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
-          <ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
             
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            />  
         </div>
     )
   }

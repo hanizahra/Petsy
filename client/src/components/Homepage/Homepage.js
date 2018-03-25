@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Social from '../Social/Social';
-import ShareButton from 'react-social-share-buttons';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 import { PageHeader, Jumbotron, Button} from 'react-bootstrap';
 
 class Homepage extends Component {
@@ -16,22 +16,11 @@ class Homepage extends Component {
                     <Button bsStyle="primary" href='/results'>Start Your Search!</Button>
 
                 </p>
-                <ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            />   
+                
+
             </Jumbotron>
+            <footer><p><Facebook /> 
+                <Twitter /></p></footer>
 
              
       </div>

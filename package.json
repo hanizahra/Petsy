@@ -22,7 +22,8 @@
     "npm": "^5.7.1",
     "path": "^0.12.7",
     "pbkdf2-password": "^1.2.1",
-    "pg-promise": "^6.10.3"
+    "pg-promise": "^6.10.3",
+    "react-social-sharebuttons": "^2.1.4"
   },
   "repository": {
     "type": "git",

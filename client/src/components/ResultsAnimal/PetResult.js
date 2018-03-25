@@ -4,7 +4,7 @@ import PetCarousel from './Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import {React_Bootstrap_Carousel} from 'react-bootstrap-carousel';
-import ShareButton from 'react-social-share-buttons';
+
 
 
 class PetResult extends Component {
@@ -142,21 +142,7 @@ class PetResult extends Component {
 
 				</div>
 				<button onClick={this.newAnimal}>New Pet</button>
-				<ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            /> 
+				
 			</div>
 			)
 	}
