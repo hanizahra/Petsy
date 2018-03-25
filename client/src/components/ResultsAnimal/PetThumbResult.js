@@ -4,23 +4,18 @@ import apiServices from '../../apiServices/apiServices';
 
 
 class PetThumbResult extends Component {
-
 	constructor(props) {
-	super(props);
-		
-	this.addToPetsList = this.addToPetsList.bind(this)
+		super(props);
+		this.addToPetsList = this.addToPetsList.bind(this)
 	}
 	showPetProfile = (petId) => {
 		this.props.showPetProfile(petId);
 	}
-
 	addToPetsList() {
-		console.log('about to be added===>', this.props)
 		apiServices.addToPetsList(this.props.pet)
-		alert('pet added to your favorites')
-      	console.log('added to your kick ass database! ===>', this.state.pet)
+		alert('pet added to favorites')
+		console.log('about to be added to julius kick ass database===>', this.props.pet)
 	}
-
 	render () {
 		let breeds = [];
 		let newBreed = [];
@@ -37,7 +32,7 @@ class PetThumbResult extends Component {
 		let zipcode;
 		let breed = [];
 		let description;
-		let id;
+		let id
 		let lastUpdate;
 		let mix;
 		let name;

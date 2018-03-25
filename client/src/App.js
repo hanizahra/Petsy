@@ -33,7 +33,7 @@ class App extends Component {
           <Particles className='particles'
           params={particlesOptions} />
           <Navigation />
-          <Container fluid={true} className='mt-3'>
+          <Container fluid className='mt-3'>
             <Route exact path='/' component={Homepage} />
             <Route path='/randomanimal' component = {RandomAnimal} />
             <Route path='/results' component = {ResultsAnimal} />
