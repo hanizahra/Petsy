@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "add": "^2.0.6",
     "axios": "^0.18.0",
     "bootstrap": "3",
     "react": "^16.2.0",
@@ -13,8 +14,11 @@
     "react-responsive-carousel": "^3.1.33",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-slick": "^0.22.2",
     "react-social-share-buttons": "^1.0.2",
-    "tachyons": "^4.9.1"
+    "slick-carousel": "^1.8.1",
+    "tachyons": "^4.9.1",
+    "yarn": "^1.5.1"
   },
   "scripts": {
     "start": "react-scripts start",

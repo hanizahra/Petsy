@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices'
 import Comments from '../Comments/Comments'
+import ShareButton from 'react-social-share-buttons';
+import { Redirect } from 'react-router-dom';
+
 class PetSingle extends Component {
 	constructor(){
 		super();
@@ -23,12 +26,13 @@ class PetSingle extends Component {
 		})
 	}
 	deletePet() {
-    console.log('deleting ===>', this.params.match.id)
+
     apiServices.deletePet(this.props.match.params.id)
 	.then((comment) => {
     	this.setState({
       		fireRedirect: true
     	});
+		console.log('deleted a thing', this.state)
   	})
   	.catch((err) => {
         console.log('noo', err)
@@ -36,6 +40,7 @@ class PetSingle extends Component {
 }
 	render() {
 		let pet = this.state.apiData
+		console.log('state fr petsingle', this.state)
 		return(
 			<div>
 			<h1>Yo Pet Single</h1>
@@ -51,6 +56,22 @@ class PetSingle extends Component {
 			<p><strong>Id: </strong>{pet.id}</p>
 			<Comments petId={this.props.match.params.id}/>
           	<button onClick={this.deletePet}>Delete Pet</button>
+          	{this.state.fireRedirect ? <Redirect to='/petslist' /> : ''}
+          	<ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adobt this cat"
+            /> <br/>
+            
+            <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            />  
 			</div>
 		)
 	}

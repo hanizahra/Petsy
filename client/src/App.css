@@ -1,10 +1,39 @@
+body {
+	background: url(https://pre00.deviantart.net/b216/th/pre/i/2010/129/f/4/seamless_grass_texture_by_hhh316.jpg);
+    background-size: inherit;
+}
+
 .App {
 	text-align: center;
 }
 
+#caroImage {
+	margin: auto;
+	max-height: 350px;
+	object-fit: contain;
+}
+
+#caroImage {
+	margin: auto;
+	max-height: 350px;
+	object-fit: contain;
+}
+
+#randImage {
+	margin: auto;
+	max-height: 350px;	
+}
+
+
 .center {
 	display: flex;
 	justify-content: center;
+}
+
+.panel {
+	margin: auto;
+	width: 100%;
+	margin-top: 20px;
 }
 
 .particles {
@@ -32,11 +61,16 @@
 	width: 100%;
 	height: 50%;
 	text-align: center;
-	background-image: url("https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&h=350");
+	background-image: url("http://96.30.15.4/~stayatho/wp-content/uploads/2011/08/Pets.jpg");
+	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+}
+
+#tagline {
+	margin: 0px 0px 80px 0px;
 }
 
 .form-group {
@@ -45,8 +79,34 @@
   float: left;
 }
 
+#startButton {
+	margin: -50px 0px 100px 0px;
+}
+
+#logo {
+	font-family: 'Pacifico', cursive;
+	margin-top: -30px;
+	padding-top: 30px;
+}
+
+
+.navbar-brand {
+	font-family: 'Pacifico', cursive;
+}
+
+h3 {
+	text-align: center;
+}
+
 p {
 	text-align: center;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+ul {
+	text-align: center;
+	list-style-position: inside;
+	padding-left:0;
 }
 
 .thumbnail {
@@ -69,10 +129,10 @@ h1 {
 	text-align: center;
 }
 
-.well {
+/*.well {
 
 	width: 100%;
-}
+}*/
 
 
 
