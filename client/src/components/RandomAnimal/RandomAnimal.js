@@ -111,12 +111,7 @@ class RandomAnimal extends Component {
 			} else {
 				options = 'none'
 			} 
-<<<<<<< HEAD
 			// console.log('sex --> ', this.state.pet.sex['$t']);
-=======
-
-
->>>>>>> hani-branch
 			sex = this.state.pet.sex['$t'];
 			age = this.state.pet.age['$t'];
 			shelterId = this.state.pet.shelterId['$t'];
@@ -202,8 +197,4 @@ class RandomAnimal extends Component {
 			)
 	}
 }
-
-
-
-
 export default RandomAnimal
