@@ -135,11 +135,6 @@ class RandomAnimal extends Component {
 			} else {
 				options = 'none'
 			} 
-
-
-
-
-
 			// console.log('sex --> ', this.state.pet.sex['$t']);
 			sex = this.state.pet.sex['$t'];
 			// console.log('age --> ', this.state.pet.age['$t']);

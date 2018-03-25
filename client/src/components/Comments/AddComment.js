@@ -12,22 +12,25 @@ class AddComment extends Component {
 		this.handleInputChange = this.handleInputChange.bind(this)
 	}
 	handleInputChange(e){
-		console.log(e.target.value)
 		this.setState({
 			comment: e.target.value,
 			pet_id: this.props.petId
 		})
 	}
 
-	handleFormSubmit(e){
+	handleFormSubmit(){
 		apiServices.addComment(this.state)  
-        console.log('added from handle form submit!', this.state)
+        console.log('added from handleFormSubmit!', this.state)
 	 }
 	render(){
 		return(
 			<div>
 				<form onSubmit={this.handleFormSubmit}>
-					<textarea type='text' name='comment' onChange={this.handleInputChange} >
+					<textarea 
+					type='text' 
+					name='comment' 
+					placeholder= 'comment here'
+					onChange={this.handleInputChange} >
 					</textarea>
 					<input type='hidden' name='pet_id' value='this.props.petId' />
 					<br/>	

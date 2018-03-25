@@ -15,7 +15,6 @@ module.exports = {
 				next(err)
 			})
 	},
-
 	getAllCommentsForThisPet(req,res,next) {
   	commentsDB.getAllCommentsForThisPet(req.params.id)
   		.then((comments) => {
@@ -42,22 +41,25 @@ module.exports = {
 			})
 		console.log('yyoooooooo',req.body)
 	},
-
 	updateComment(req,res,next) {
 		commentsDB.update(req.body)
 			.then((comment) => {
-				res.locals.recipesUpdated = comment
-				next()
+				res.locals.commentUpdated = comment
+				res.json({
+					message: 'ok boss comment updated fr comment controller'
+				})
 			})
 			.catch(err => {
 				next(err)
 			})
+		console.log('req.body of your form that you updated',req.body)
 	},
-
 	deleteComment(req,res,next) {
-		commentDB.destroy(req.params.id)
+		commentsDB.destroy(req.params.id)
 			.then(()=> { 
-				next()
+				res.json({
+					message: 'ok comment deleted boss'
+				})
 			})
 			.catch(err => {
 				next(err)

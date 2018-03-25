@@ -57,13 +57,3 @@ render() {
   }
 }
 export default Pet;
-
-/*
-          <BrowserRouter>
-          <div>
-            <Link to='/petsingle'> <p> see more </p> </Link>
-            <Route path='/petsingle' component={() => (<PetSingle pet={this.props} /> )}/>
-          </div>
-          </BrowserRouter>
-
-          */

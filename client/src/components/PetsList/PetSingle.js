@@ -40,7 +40,7 @@ class PetSingle extends Component {
 }
 	render() {
 		let pet = this.state.apiData
-		console.log('loaded', this.state)
+		console.log('state fr petsingle', this.state)
 		return(
 			<div>
 			<h1>Yo Pet Single</h1>
