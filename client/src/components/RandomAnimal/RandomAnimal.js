@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class RandomAnimal extends Component {
 
@@ -201,7 +203,8 @@ class RandomAnimal extends Component {
 				</div>
 				<button onClick={this.newAnimal}>New Pet</button>
 				<button onClick={this.addToPetsList}>Add to Favoritos</button>
-				
+				<footer><p><Facebook /> 
+                <Twitter /></p></footer>
 			</div>
 			)
 	}

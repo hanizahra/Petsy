@@ -4,6 +4,8 @@ import PetCarousel from './Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import {React_Bootstrap_Carousel} from 'react-bootstrap-carousel';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 
 
@@ -142,7 +144,8 @@ class PetResult extends Component {
 
 				</div>
 				<button onClick={this.newAnimal}>New Pet</button>
-				
+				<footer><p><Facebook /> 
+                <Twitter /></p></footer>
 			</div>
 			)
 	}

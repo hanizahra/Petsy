@@ -6,6 +6,8 @@ import Result from 'components/Quiz/Result';
 import ResultModal from 'components/Quiz/ResultModal';
 import 'components/Quiz/Quiz.css';
 import sampleSize from 'lodash/sampleSize';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 const petfinderApiUrl = 'http://api.petfinder.com';
 const petfinderApiKey = 'afd0c202e8bb93fc9c52f49d4a226b04';
@@ -145,6 +147,8 @@ class Quiz extends Component {
           isOpen={this.state.isModalOpen}
           onToggle={this.handleModalToggle} >
         </ResultModal>
+        <footer><p><Facebook /> 
+                <Twitter /></p></footer>
       </div>
     )
   }

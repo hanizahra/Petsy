@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import apiServices from '../../apiServices/apiServices';
 import { BrowserRouter, Redirect, Route, Link } from 'react-router-dom';
-
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 import Comments from '../Comments/Comments';
 import PetSingle from './PetSingle';
 
@@ -37,7 +38,8 @@ render() {
           <p>Type:{this.props.pets.animal}</p>
           <p>Breed:{this.props.pets.breed}</p>
           {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
-            
+         <footer><p><Facebook /> 
+                <Twitter /></p></footer>   
         </div>
     )
   }

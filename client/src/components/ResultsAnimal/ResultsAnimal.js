@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PetResult from './PetResult';
 import PetThumbResult from './PetThumbResult';
 import PetCarousel from './Carousel';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
 
 class ResultsAnimal extends Component {
@@ -196,7 +198,8 @@ class ResultsAnimal extends Component {
 					<div className="pet-thumb-results-container">
 						{petThumbResults}
 					</div>
-				
+				<footer><p><Facebook /> 
+                <Twitter /></p></footer>
 					
 				</div>
 			);

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Pet from './Pet';
 import apiServices from '../../apiServices/apiServices';
 import { Redirect } from 'react-router-dom';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 
 class PetsList extends Component {
@@ -35,7 +37,8 @@ class PetsList extends Component {
     return(
         <div>
           {this.state.apiDataLoaded ? this.renderPets() : ''}
-
+          <footer><p><Facebook /> 
+                <Twitter /></p></footer>
         </div>
       )
   }

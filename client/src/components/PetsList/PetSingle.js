@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices'
 import Comments from '../Comments/Comments'
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class PetSingle extends Component {
 	constructor(){
@@ -52,7 +54,8 @@ class PetSingle extends Component {
 			<p><strong>Id: </strong>{pet.id}</p>
 			<Comments petId={this.props.match.params.id}/>
           	<button onClick={this.deletePet}>Delete Pet</button>
-          	
+          	<footer><p><Facebook /> 
+                <Twitter /></p></footer>
 			</div>
 		)
 	}

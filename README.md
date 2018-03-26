@@ -1,10 +1,10 @@
-# Paws, Claws, Beaks Ohh Mine
+# Petsy
 
 Hani Zahra / Brian Martinez / Julius Regalado / Scott Schorn March 19, 2018 
 
-## Rescue-Yours Proposal  
+## Petsy Proposal  
 	"You can't change an animal's past, but you could rewrite their future"
-	Rescue-Yours is our attempt at making a simple rescue pet finding application using an inputed location.
+	Petsy is our attempt at making a simple rescue pet finding application using an inputed location.
 	A user will theoretically be able to input a location and pick from a drop down list of animals
 	Once their results show, they can view the details of an animal and save them to their favorites. 
 	A user will be able to upload and delete their own comments on their favorite animals.
@@ -31,7 +31,6 @@ Hani Zahra / Brian Martinez / Julius Regalado / Scott Schorn March 19, 2018
 ## Extras
 	Include sign up/log in functionality**, with encrypted passwords & authorization with bcrypt
 	Being able to share to social media
-	Hit more external API's (Watson, Trivia about animal(breed))
 	Explore additional NPM packages
 	features features features if team sanity/skill up to par
 
@@ -41,11 +40,11 @@ Hani Zahra / Brian Martinez / Julius Regalado / Scott Schorn March 19, 2018
     Sinday - CODE
     _ Monday CODE
     _ Tuesday CODE
-    _ Wednesday CODE/Life
+    _ Wednesday Snowday
     _ Thursday CODE
     _ Friday CODE
     _ Saturday FRANTICALLY CODE/Life
-    _ Sunday FRANTICALLY CODE/Life
+    _ Sunday FRANTICALLY CODE/Life/Merge Conflicts
     _ Monday FRANTICALLY CODE until Presentation!
 
 ## Obstacles

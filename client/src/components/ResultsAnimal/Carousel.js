@@ -7,6 +7,7 @@ import { Carousel } from 'react-bootstrap';
 
 
 
+
 class PetCarousel extends Component {
 
 	constructor(props) {
