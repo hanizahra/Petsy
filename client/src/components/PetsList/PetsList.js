@@ -40,7 +40,7 @@ class PetsList extends Component {
                 socialMedia={'facebook'}
                 url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
                 media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
+                text="adopt this cat"
             /> <br/>
             
             <ShareButton

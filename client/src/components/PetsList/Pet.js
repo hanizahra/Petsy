@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import apiServices from '../../apiServices/apiServices';
 import { BrowserRouter, Redirect, Route, Link } from 'react-router-dom';
+import { Well, Thumbnail } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons';
 import Comments from '../Comments/Comments';
 import PetSingle from './PetSingle';
@@ -30,19 +31,22 @@ deletePet() {
     })
 }
 render() {
+  console.log('this is props', this.props.pets.photos)
   return (
-        <div>
-          <h2>Name:{this.props.pets.name}</h2>
-          <Link to={`/petsingle/${this.props.pets.id}`}>See more</Link>
-          <p>Type:{this.props.pets.animal}</p>
-          <p>Breed:{this.props.pets.breed}</p>
+        <div className='pet-list'>
+          <Well className='pet-list-well'>
+            <h2>Name:{this.props.pets.name}</h2>
+            <Link className="seeMore" to={`/petsingle/${this.props.pets.id}`}>See more</Link>
+            <p>Type:{this.props.pets.animal}</p>
+            <p>Breed:{this.props.pets.breed}</p>
+          </Well>
           {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
           <ShareButton
                 compact
                 socialMedia={'facebook'}
                 url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
                 media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
+                text="adopt this cat"
             /> <br/>
             
             <ShareButton

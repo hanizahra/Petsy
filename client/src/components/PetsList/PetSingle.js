@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices'
 import Comments from '../Comments/Comments'
 import ShareButton from 'react-social-share-buttons';
+import { Well, ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
+import SingleCarousel from './SingleCarousel';
 
 class PetSingle extends Component {
 	constructor(){
@@ -40,40 +42,71 @@ class PetSingle extends Component {
 }
 	render() {
 		let pet = this.state.apiData
+		// let petPic = JSON.parse(pet)
 		console.log('state fr petsingle', this.state)
-		return(
-			<div>
-			<h1>Yo Pet Single</h1>
-			<p><strong>Pet's Name: </strong>{pet.name}</p>
-			<p><strong>Type: </strong>{pet.animal}</p>
-			<p><strong>Breed: </strong>{pet.breed}</p>
-			<p><strong>Hybrid: </strong>{pet.mixed}</p>
-			<p><strong>Description: </strong>{pet.description}</p>
-			<p><strong>Owner's Address: </strong>{pet.owner_address}</p>
-			<p><strong>City: </strong>{pet.owner_city}</p>
-			<p><strong>State: </strong>{pet.owner_state}</p>
-			<p><strong>Email: </strong>{pet.owner_email}</p>
-			<p><strong>Id: </strong>{pet.id}</p>
-			<Comments petId={this.props.match.params.id}/>
-          	<button onClick={this.deletePet}>Delete Pet</button>
-          	{this.state.fireRedirect ? <Redirect to='/petslist' /> : ''}
-          	<ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            />  
-			</div>
-		)
+		console.log('this is pet---> ', pet)
+		console.log('this is this.state.apiData', this.state.apiData.photos)
+		// console.log('this is pet parsed', petPic)
+		
+		if(this.state.apiDataLoaded)
+		{
+			console.log('name', pet.name, typeof pet.name);
+			let name = JSON.parse(pet.name)['$t'];
+			let animal = JSON.parse(pet.animal)['$t'];
+			let breed = JSON.parse(pet.breed)['breed']['$t'];
+			let mixed = JSON.parse(pet.mixed)['$t'];
+			let description = JSON.parse(pet.description)['$t'];
+			let owner_address = JSON.parse(pet.owner_address)['$t'];
+			let city = JSON.parse(pet.owner_city)['$t'];
+			let state = JSON.parse(pet.owner_state)['$t'];
+			let email = JSON.parse(pet.owner_email)['$t'];
+			let photos = JSON.parse(pet.photos)['photo'];
+			console.log('these are the photos', photos)
+
+
+			return(
+				<div>
+					<SingleCarousel photos={photos} />
+					<Well className='single-well'>
+						<p><strong>Pet's Name: </strong>{name}</p>
+						<p><strong>Animal: </strong>{animal}</p>
+						<p><strong>Breed: </strong>{breed}</p>
+						<p><strong>Mixed: </strong>{mixed}</p>
+						<p><strong>Description: </strong>{description}</p>
+						<p><strong>Owner's Address: </strong>{owner_address}</p>
+						<p><strong>City: </strong>{city}</p>
+						<p><strong>State: </strong>{state}</p>
+						<p><strong>Email: </strong>{email}</p>
+						<p><strong>Id: </strong>{pet.id}</p>
+						<Comments petId={this.props.match.params.id}/>
+			          	<ButtonToolbar>
+						    <Button bsStyle="danger" onClick={this.deletePet}>Delete Pet</Button>
+						</ButtonToolbar>
+			          	
+			          	{this.state.fireRedirect ? <Redirect to='/petslist' /> : ''}
+		          	</Well>
+		          	<ShareButton
+		                compact
+		                socialMedia={'facebook'}
+		                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+		                media={"https://brianmartinezjtm.com"}
+		                text="adopt this cat"
+		            /> <br/>
+		            
+		            <ShareButton
+		                compact
+		                socialMedia={'twitter'}
+		                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+		                media={"https://brianmartinezjtm.com"}
+		                text="adopt this dog"
+		            />  
+				</div>
+			)
+		}
+		else
+		{
+			return (<div>Loading...</div>);
+		}
 	}
 }
 

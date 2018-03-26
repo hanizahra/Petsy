@@ -30,8 +30,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Particles className='particles'
-          params={particlesOptions} />
           <Navigation />
           <Container fluid className='mt-3'>
             <Route exact path='/' component={Homepage} />

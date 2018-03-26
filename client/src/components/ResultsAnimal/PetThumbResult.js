@@ -87,7 +87,6 @@ class PetThumbResult extends Component {
 					if(photos[photoIdx]['@size'] == 'pn') {
 						thumbnail = photos[photoIdx]['$t'];
 						renderedThumb = (
-							<Col xs={6} md={4}>
 						      <Thumbnail src={thumbnail} alt="242x200" responsive>
 						        <p>{name}</p>
 						        <p>
@@ -95,7 +94,7 @@ class PetThumbResult extends Component {
 						          <Button bsStyle="default" onClick={this.addToPetsList}>Save</Button>
 						        </p>
 						      </Thumbnail>
-						    </Col>)
+						    )
 						break;
 					}
 				}
@@ -105,14 +104,8 @@ class PetThumbResult extends Component {
 		return (
 			<div className="pet-thumb-result" onClick={(evt) => this.showPetProfile(this.props.index)}>
 				{/*<div><img src={thumbnail}/></div>
-				<div>{name}</div>*/}
-				<Grid>
-				  <Row>
-				    
+				<div>{name}</div>*/}	    
 				    {renderedThumb}
-				   
-				  </Row>
-				</Grid>
 			</div>
 		)
 		
