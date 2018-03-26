@@ -4,8 +4,24 @@
   overflow: hidden;
   background: #efefef;
   cursor: pointer;
+  padding: 0;
 }
 
 .result-image-container img {
   vertical-align: middle;
 }
+
+.result-image-container img.no-image {
+  height: 350px;
+  width: 100%;
+  diplay: block;
+}
+
+.modal-body {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/*p {
+  text-align: left
+}*/

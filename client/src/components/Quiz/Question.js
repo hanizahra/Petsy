@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import AnswerButton from 'components/Quiz/AnswerButton';
 import AnswerTextForm from 'components/Quiz/AnswerTextForm';
 
@@ -31,16 +31,16 @@ const Question = (props) => {
       onAnswerSelection={props.onAnswerSelection} />
   }
 
-	return (
-		<Container fluid>
+  return (
+    <Grid fluid>
       <Row>
-        <Col sm='5'>
+        <Col sm={5}>
           <p>{props.question.text}</p>
           {answerInput}
         </Col>
       </Row>
-    </Container>
-	)
+    </Grid>
+  )
 }
 
 export default Question;
