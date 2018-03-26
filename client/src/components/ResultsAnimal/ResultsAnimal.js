@@ -4,6 +4,8 @@ import PetThumbResult from './PetThumbResult';
 import PetCarousel from './Carousel';
 import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button, Pager } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class ResultsAnimal extends Component {
 
@@ -190,21 +192,8 @@ class ResultsAnimal extends Component {
 					<div className="pet-thumb-results-container">
 						{petThumbResults}
 					</div>
-					<ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            /> 
+						<footer><p><Facebook />
+	               		<Twitter /></p></footer> 
 					
 				</div>
 			);

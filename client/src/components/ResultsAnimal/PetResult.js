@@ -5,8 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import {React_Bootstrap_Carousel} from 'react-bootstrap-carousel';
 import {Button, Pager, Panel, ButtonToolbar} from 'react-bootstrap';
-import ShareButton from 'react-social-share-buttons';
 import ResultsAnimal from './ResultsAnimal';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 
 class PetResult extends Component {
@@ -136,21 +137,8 @@ class PetResult extends Component {
 				<ButtonToolbar>
 					<Button href="/results">Search again!</Button>
 				</ButtonToolbar>
-				<ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            /> 
+				<footer><p><Facebook />
+               	<Twitter /></p></footer>
 			</div>
 			)
 	}

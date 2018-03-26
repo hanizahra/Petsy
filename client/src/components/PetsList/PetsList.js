@@ -3,6 +3,8 @@ import Pet from './Pet';
 import apiServices from '../../apiServices/apiServices';
 import { Redirect } from 'react-router-dom';
 import ShareButton from 'react-social-share-buttons';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class PetsList extends Component {
   constructor() {
@@ -35,21 +37,8 @@ class PetsList extends Component {
     return(
         <div>
           {this.state.apiDataLoaded ? this.renderPets() : ''}
-          <ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            />  
+          <footer><p><Facebook />
+          <Twitter /></p></footer> 
         </div>
       )
   }

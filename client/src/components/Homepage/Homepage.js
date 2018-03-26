@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Social from '../Social/Social';
-import ShareButton from 'react-social-share-buttons';
 import HomepageSlider from './HomepageSlider';
 import { PageHeader, Jumbotron, Button} from 'react-bootstrap';
 import Slider from 'react-slick';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class Homepage extends Component {
   render() {
@@ -19,21 +19,8 @@ class Homepage extends Component {
 
                 </p>   
             </Jumbotron>
-            <ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-                /> <br/>
-            
-                <ShareButton
-                    compact
-                    socialMedia={'twitter'}
-                    url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                    media={"https://brianmartinezjtm.com"}
-                    text="adopt this dog"
-                />
+            <footer><p><Facebook />
+            <Twitter /></p></footer>
       </div>
     )
   }
