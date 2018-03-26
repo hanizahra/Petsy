@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from 'reactstrap';
+import { Grid } from 'react-bootstrap';
 import Particles from 'react-particles-js';
+import { Container } from 'reactstrap';
 
 import Homepage from './components/Homepage/Homepage';
 import RandomAnimal from './components/RandomAnimal/RandomAnimal';

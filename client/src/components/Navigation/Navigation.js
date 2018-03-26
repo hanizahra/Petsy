@@ -8,7 +8,6 @@ import {Navbar, Nav, NavItem} from 'react-bootstrap';
 class Navigation extends Component {
   constructor(props) {
     super(props);
-
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
       isOpen: false
@@ -66,7 +65,7 @@ class Navigation extends Component {
           <NavItem eventKey={3} href='/results'>Animal Search</NavItem>
           <NavItem eventKey={4} href="/petslist">Pets List</NavItem>
           <NavItem eventKey={5} href="/quiz">Quiz</NavItem>
-          
+
         </Nav>
         </Navbar.Collapse>
       </Navbar>

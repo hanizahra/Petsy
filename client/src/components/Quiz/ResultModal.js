@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row, Label, Card, CardImg, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Col, Row, Label, Button, Panel, Image, Modal } from 'react-bootstrap';
 
 class ResultModal extends Component {
   constructor(props) {
@@ -23,12 +23,12 @@ class ResultModal extends Component {
       let images = result.media.photos.photo.reduce((thumbnails, photo) =>  {
         if (photo['@size'] === 'x') {
           let thumbnail = (
-            <Col md="6" key={photo['$t']}>
-              <Card className="mb-4">
-                <div className='result-image-container'>
-                  <CardImg top width="100%" src={photo['$t']} alt="Card image cap" />
-                </div>
-              </Card>
+            <Col md={6} key={photo['$t']}>
+              <Panel>
+                <Panel.Body className='result-image-container'>
+                  <Image width="100%" src={photo['$t']} alt="Card image cap" />
+                </Panel.Body>
+              </Panel>
             </Col>
           );
           thumbnails.push(thumbnail);
@@ -37,9 +37,9 @@ class ResultModal extends Component {
         return thumbnails;
       }, [])
       return (
-        <Modal centered size='lg' isOpen={this.props.isOpen} toggle={this.props.onToggle}>
-          <ModalHeader toggle={this.props.onToggle}>{name}</ModalHeader>
-          <ModalBody>
+        <Modal bsSize="large" show={this.props.isModalOpen} onHide={this.props.onModalHide}>
+          <Modal.Header closeButton><Modal.Title>{name}</Modal.Title></Modal.Header>
+          <Modal.Body>
             <Row>
               {images}
             </Row>
@@ -47,7 +47,7 @@ class ResultModal extends Component {
             <p>{description}</p>
             <p>Contact Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
             </p>
-          </ModalBody>
+          </Modal.Body>
         </Modal>
       );
     }

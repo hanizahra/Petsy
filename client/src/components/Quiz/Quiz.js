@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button, Row, Col } from 'reactstrap';
+import { Jumbotron, Button, Row, Col } from 'react-bootstrap';
 import questions from 'components/Quiz/questions';
 import Question from 'components/Quiz/Question';
 import Result from 'components/Quiz/Result';
@@ -32,7 +32,7 @@ class Quiz extends Component {
     this.handleAnswerSelection = this.handleAnswerSelection.bind(this);
     this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.handleModalOpen = this.handleModalOpen.bind(this);
-    this.handleModalToggle = this.handleModalToggle.bind(this);
+    this.handleModalHide = this.handleModalHide.bind(this);
   }
 
   handleAnswerSelection(questionIndex, answer) {
@@ -50,7 +50,7 @@ class Quiz extends Component {
 
   handleBackButtonClick() {
     this.setState({
-      currentQuestionIndex: this.state.currentQuestionIndex - 1
+      currentQuestionIndex: this.state.currentQuestionIndex - 1, results: null
     });
   }
 
@@ -67,7 +67,7 @@ class Quiz extends Component {
         (response) => response.json()
       ).then((jsonResponse) => {
         if (jsonResponse.petfinder.pets) {
-          this.setState({results: sampleSize(jsonResponse.petfinder.pets.pet, 3)})
+          this.setState({results: sampleSize(jsonResponse.petfinder.pets.pet, 6)})
         } else {
           this.setState({results: []})
         }
@@ -81,8 +81,8 @@ class Quiz extends Component {
     this.setState({ isModalOpen: true, modalResult: result });
   }
 
-  handleModalToggle() {
-    this.setState({ isModalOpen: !this.state.isModalOpen });
+  handleModalHide() {
+    this.setState({ isModalOpen: false });
   }
 
   createResultsDisplay(results) {
@@ -142,8 +142,8 @@ class Quiz extends Component {
           {backButton}
         </Jumbotron>
         <ResultModal result={this.state.modalResult}
-          isOpen={this.state.isModalOpen}
-          onToggle={this.handleModalToggle} >
+          isModalOpen={this.state.isModalOpen}
+          onModalHide={this.handleModalHide} >
         </ResultModal>
       </div>
     )
