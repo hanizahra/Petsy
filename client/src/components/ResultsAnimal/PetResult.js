@@ -4,16 +4,21 @@ import PetCarousel from './Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import {React_Bootstrap_Carousel} from 'react-bootstrap-carousel';
+<<<<<<< HEAD
 import Facebook from '../Social/Facebook';
 import Twitter from '../Social/Twitter';
 
+=======
+import {Button, Pager, Panel} from 'react-bootstrap';
+import ShareButton from 'react-social-share-buttons';
+import ResultsAnimal from './ResultsAnimal';
+>>>>>>> 577b00582943765e1c00c15009999600614829b6
 
 
 class PetResult extends Component {
 
 	constructor(props) {
 		super(props);
-		
 	}
 
 	render () {
@@ -91,61 +96,71 @@ class PetResult extends Component {
 			shelterPetId = this.props.pet.shelterPetId['$t'];
 			size = this.props.pet.size['$t'];
 			status = this.props.pet.status['$t']
-
-
-			// if (typeof this.props.pet.media.photos === 'object' && this.props.pet.media.photos.photo.length > 0) {
-			// 		// this.props.pet.media.photos.photo.forEach(opt => 
-			// 		// {
-			// 		// 	photos.push(opt['$t'])
-			// 		// })
-			// 		let photos = this.props.pet.media.photos.photo;
-			// 		photo = photos.map(function(el, id) {
-			// 			if(el['@size'] === 'x'){
-			// 				return (<li key = {id} > <img src={el['$t']} /> </li>)
-			// 			}
-			// 		})
-
-			// } else {
-			// 	photo = 'none';
-			// }
 		}
 
 		
 		return (
 			<div>
-				<h1>Results: </h1>
 				<div className = 'animal-class'>
-					<h3>Animal Information</h3>
-					<p>Name: {name} </p>
-					Breed: <ul> {newBreed} </ul>
-					<p>Animal: {animal} </p>
-					<p>Sex: {sex} </p>
-					<p>Age: {age} </p>
-					<p>Mix: {mix} </p>
-					<p>Size: {size} </p>
-					<p>Shelter ID: {shelterId} </p>
-					<p>Shelter Pet ID: {shelterPetId} </p>
-					Altered: <ul> {options} </ul>
-					<p>Description: {description} </p>
-					Photos: <ul style={{listStyleType: "none" }}> {photo} </ul>
-					<p>ID: {id} </p>
-					<p>Status: {status} </p>
-					<p>Last Update: {lastUpdate} </p>
+
+					<Panel bsStyle="primary">
+					    <Panel.Heading>
+					      	<Panel.Title componentClass="h3">Animal Info</Panel.Title>
+					    </Panel.Heading>
+					    <Panel.Body>
+							<p><b>Name:</b> {name} </p>
+					    	<p><b>Breed:</b></p> <ul> {newBreed} </ul>
+							<p><b>Animal:</b> {animal} </p>
+							<p><b>Sex:</b> {sex} </p>
+							<p><b>Age:</b> {age} </p>
+							<p><b>Mix:</b> {mix} </p>
+							<p><b>Size:</b> {size} </p>
+							<p><b>Altered:</b></p> <ul> {options} </ul>
+							<p><b>Description:</b> {description} </p>
+							<p><b>Status:</b> {status} </p>
+							<p><b>Posted:</b> {lastUpdate} </p>
+					    </Panel.Body>
+					</Panel>
+					
 				</div>
 				<div className = 'owner-class'>
-					<h3>Owner Information</h3>
-					<p>Address1: {address1} </p>
-					<p>Address2: {address2} </p>
-					<p>City: {city} </p>
-					<p>Email: {email} </p>
-					<p>State: {state} </p>
-					<p>Zipcode: {zipcode} </p>	
-					<p>Phone: {phone} </p>
-
+					<Panel bsStyle="primary">
+					    <Panel.Heading>
+					      	<Panel.Title componentClass="h3">Owner Info</Panel.Title>
+					    </Panel.Heading>
+					    <Panel.Body>
+							<p>{address1} </p>
+							<p>{address2} </p>
+							<p>{city} </p>
+							<p>{email} </p>
+							<p>{state} </p>
+							<p>{zipcode} </p>	
+							<p>{phone} </p>
+					    </Panel.Body>
+					</Panel>
 				</div>
+<<<<<<< HEAD
 				<button onClick={this.newAnimal}>New Pet</button>
 				<footer><p><Facebook /> 
                 <Twitter /></p></footer>
+=======
+				<Button href="/results">Search again!</Button>
+				<ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adobt this cat"
+            /> <br/>
+            
+            <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            /> 
+>>>>>>> 577b00582943765e1c00c15009999600614829b6
 			</div>
 			)
 	}

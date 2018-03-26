@@ -31,9 +31,8 @@ class PetCarousel extends Component {
 							return (
 
 								<Carousel.Item>
-			            <img width={450} height={250} alt="900x500" src={el['$t']} />
+			            <div className="imageSize"> <img id="caroImage" width={450} height={350} alt="900x500" src={el['$t']} /> </div>
 			          </Carousel.Item>
-
 							)
 						}
 					})

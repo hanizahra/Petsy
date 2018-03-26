@@ -16,6 +16,7 @@ module.exports = {
   getAllCommentsForThisPet(id) {
     return db.any(`
       SELECT 
+      comments.id,
       comment,
       pet_id 
       FROM 
@@ -40,11 +41,10 @@ module.exports = {
     	comment
     	);  	
     },
-    update(recipe) {
+    update(comment) {
   	return db.one(`
   		UPDATE comments
-  		SET comment = $/comment/,
-      pet_id = $/pet_id/
+  		SET comment = $/comment/
   		WHERE id = $/id/
   		RETURNING *`,
       	comment
@@ -52,8 +52,8 @@ module.exports = {
   	},
   	destroy(id) {
     return db.none(`
-    	DELETE
+      DELETE
         FROM comments
-       	WHERE id = $1`, id);
+        WHERE id = $1`, id);
   	}
 };

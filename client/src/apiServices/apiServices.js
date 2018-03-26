@@ -39,7 +39,7 @@ apiServices.deletePet = (id) => {
 }
 // AXIOS CALLS FOR COMMENTS
 
- apiServices.getAllCommentsForThisPet = (id) => {
+apiServices.getAllCommentsForThisPet = (id) => {
   console.log('axios call for get getAllCommentsForThisPet===>', id)
    return axios.get(`/api/petFinder/comments/${id}`)  
 }
@@ -51,9 +51,28 @@ apiServices.addComment = (comment) => {
     data: {
       comment: comment.comment,
       pet_id: comment.pet_id
-    },
-  });
-};
+    }
+  })
+},
+
+apiServices.updateComment = (comment, id) => {
+  return axios({
+    method:'PUT',
+    url: `/api/petFinder/comment/${id}`,
+    data: 
+    {
+      id: comment.commentId,
+      comment: comment.comment,
+      //pet_id: comment.petId
+    }
+  })
+}
+apiServices.deleteComment = (id) => {
+  console.log('axios call for get deletComment===>', id)
+  return axios.delete(`/api/petFinder/comment/${id}`);
+}
+
+
 
 
 export default apiServices;

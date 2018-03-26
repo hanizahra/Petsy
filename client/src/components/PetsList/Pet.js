@@ -33,8 +33,8 @@ deletePet() {
 render() {
   return (
         <div>
-          <Link to={`/petsingle/${this.props.pets.id}`}>See more</Link>
           <h2>Name:{this.props.pets.name}</h2>
+          <Link to={`/petsingle/${this.props.pets.id}`}>See more</Link>
           <p>Type:{this.props.pets.animal}</p>
           <p>Breed:{this.props.pets.breed}</p>
           {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
@@ -45,13 +45,3 @@ render() {
   }
 }
 export default Pet;
-
-/*
-          <BrowserRouter>
-          <div>
-            <Link to='/petsingle'> <p> see more </p> </Link>
-            <Route path='/petsingle' component={() => (<PetSingle pet={this.props} /> )}/>
-          </div>
-          </BrowserRouter>
-
-          */

@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image, Thumbnail, Button} from 'react-bootstrap';
+import apiServices from '../../apiServices/apiServices';
 
 
 class PetThumbResult extends Component {
 
 	constructor(props) {
 		super(props);
-		
+		this.addToPetsList = this.addToPetsList.bind(this)
 	}
 
 	showPetProfile = (petId) => {
 		this.props.showPetProfile(petId);
 	}
-
+	addToPetsList() {
+		apiServices.addToPetsList(this.props.pet)
+		alert('pet added to favorites')
+		console.log('about to be added to julius kick ass database===>', this.props.pet)
+	}
 	render () {
 		let breeds = [];
 		let newBreed = [];
@@ -29,7 +34,7 @@ class PetThumbResult extends Component {
 		let zipcode;
 		let breed = [];
 		let description;
-		let id;
+		let id
 		let lastUpdate;
 		let mix;
 		let name;
@@ -87,7 +92,7 @@ class PetThumbResult extends Component {
 						        <p>{name}</p>
 						        <p>
 						          <Button bsStyle="primary">Go to</Button>&nbsp;
-						          <Button bsStyle="default">Save</Button>
+						          <Button bsStyle="default" onClick={this.addToPetsList}>Save</Button>
 						        </p>
 						      </Thumbnail>
 						    </Col>)

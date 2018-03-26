@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import PetResult from './PetResult';
 import PetThumbResult from './PetThumbResult';
 import PetCarousel from './Carousel';
+<<<<<<< HEAD
 import Facebook from '../Social/Facebook';
 import Twitter from '../Social/Twitter';
 import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
+=======
+import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button, Pager } from 'react-bootstrap';
+import ShareButton from 'react-social-share-buttons';
+>>>>>>> 577b00582943765e1c00c15009999600614829b6
 
 class ResultsAnimal extends Component {
 
@@ -12,7 +17,7 @@ class ResultsAnimal extends Component {
 		super(props);
 		this.state = {
 			pets: [],
-			locationArg: '11215',
+			locationArg: '11211',
 			numResults : '5',
 			sizeResults : '',
 			animalSex : '',
@@ -86,18 +91,12 @@ class ResultsAnimal extends Component {
 			animalType: evt.target.value
 		})
 	}
-
-
-
 	handleFormSubmit(e) {
 		e.preventDefault();
 	}
-	
-	showPetProfile = (petId) =>
-	{
+	showPetProfile = (petId) => {
 		this.setState({showProfile: petId});
 	}
-
 	backToResults = (evt) =>
 	{
 		evt.preventDefault();
@@ -183,7 +182,6 @@ class ResultsAnimal extends Component {
 						      	</FormControl>
 						    </FormGroup>
 						    <Button onClick={this.newAnimal}>Submit</Button>
-
 						    <FormGroup value={this.state.animalSex} onChange={this.setAnimalSex}>
 						      	<Radio name="radioGroup" inline value="F">
 						        	Female
@@ -207,9 +205,13 @@ class ResultsAnimal extends Component {
 		else {
 			return (
 				<div>
-					<a href="#" onClick={this.backToResults}>Go Back</a>
+					<Pager>
+					  	<Pager.Item previous onClick={this.backToResults}>
+					    	&larr; Previous Page
+					 	</Pager.Item>
+					</Pager>
 					<PetCarousel pet={this.state.pets[this.state.showProfile]}/>
-					<PetResult pet={this.state.pets[this.state.showProfile]}/>
+					<PetResult pet={this.state.pets[this.state.showProfile]} newAnimal={this.newAnimal}/>
 				</div>);
 		}
 

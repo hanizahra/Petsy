@@ -24,7 +24,7 @@ class Navigation extends Component {
   render() {
 		return(
 			<Navbar dark expand="md" color="dark">
-				<NavbarBrand href="/" className="mr-auto">Petsy</NavbarBrand>
+				<NavbarBrand href="/" id="logoNav" className="mr-auto">Petsy</NavbarBrand>
 				<NavbarToggler onClick={this.toggleNavbar} />
 	      <Collapse isOpen={this.state.isOpen} navbar>
 	        <Nav className="ml-auto" navbar>
