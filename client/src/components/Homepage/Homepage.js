@@ -17,24 +17,23 @@ class Homepage extends Component {
                 <p id="startButton">
                     <Button bsStyle="primary" href='/results'>Start Your Search!</Button>
 
-                </p>
-                <ShareButton
+                </p>   
+            </Jumbotron>
+            <ShareButton
                 compact
                 socialMedia={'facebook'}
                 url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
                 media={"https://brianmartinezjtm.com"}
                 text="adobt this cat"
-            /> <br/>
+                /> <br/>
             
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            />   
-            </Jumbotron>
-
+                <ShareButton
+                    compact
+                    socialMedia={'twitter'}
+                    url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                    media={"https://brianmartinezjtm.com"}
+                    text="adopt this dog"
+                />
       </div>
     )
   }
