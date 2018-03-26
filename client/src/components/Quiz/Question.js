@@ -31,13 +31,8 @@ const Question = (props) => {
       onAnswerSelection={props.onAnswerSelection} />
   }
 
-<<<<<<< HEAD
-	return (
-		<Grid fluid>
-=======
   return (
     <Grid fluid>
->>>>>>> hani-backup-master-backup
       <Row>
         <Col sm={5}>
           <p>{props.question.text}</p>
@@ -45,11 +40,7 @@ const Question = (props) => {
         </Col>
       </Row>
     </Grid>
-<<<<<<< HEAD
-	)
-=======
   )
->>>>>>> hani-backup-master-backup
 }
 
 export default Question;

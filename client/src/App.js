@@ -3,11 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Grid } from 'react-bootstrap';
 import Particles from 'react-particles-js';
-<<<<<<< HEAD
+
 import { Container } from 'reactstrap';
-=======
-import { Grid } from 'react-bootstrap';
->>>>>>> hani-backup-master-backup
+
 
 import Homepage from './components/Homepage/Homepage';
 import RandomAnimal from './components/RandomAnimal/RandomAnimal';
