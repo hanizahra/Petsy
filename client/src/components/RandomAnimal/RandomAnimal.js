@@ -3,6 +3,8 @@ import apiServices from '../../apiServices/apiServices';
 import ShareButton from 'react-social-share-buttons';
 import RandomCarousel from './RandomCarousel';
 import { Panel, Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class RandomAnimal extends Component {
 
@@ -180,21 +182,8 @@ class RandomAnimal extends Component {
 					  	<Button onClick={this.addToPetsList}><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Save</Button>
 					</ButtonGroup>
 				</ButtonToolbar>
-				<ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            /> 
+				<footer><p><Facebook />
+            	<Twitter /></p></footer>
 			</div>
 			)
 	}

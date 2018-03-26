@@ -5,6 +5,8 @@ import { Well, Thumbnail, Button} from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons';
 import Comments from '../Comments/Comments';
 import PetSingle from './PetSingle';
+import Facebook from '../Social/Facebook';
+import Twitter from '../Social/Twitter';
 
 class Pet extends Component {
 constructor(props){
@@ -80,21 +82,7 @@ render() {
         <Link className="seeMore" to={`/petsingle/${this.props.pets.id}`}>See more</Link>
       </Well>
       {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
-      <ShareButton
-            compact
-            socialMedia={'facebook'}
-            url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-            media={"https://brianmartinezjtm.com"}
-            text="adopt this cat"
-        /> <br/>
-        
-        <ShareButton
-            compact
-            socialMedia={'twitter'}
-            url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-            media={"https://brianmartinezjtm.com"}
-            text="adopt this dog"
-        />  
+       
     </div>
     )
   }

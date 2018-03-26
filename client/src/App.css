@@ -76,7 +76,7 @@ body {
 	height: 50%;
 	text-align: center;
 	background-image: url("http://96.30.15.4/~stayatho/wp-content/uploads/2011/08/Pets.jpg");
-	background-position: 50% 50%;
+	background-position: 50% 120%;
 	background-size: contain !important;
 	background-repeat: no-repeat;
 	background-clip: none;
@@ -85,7 +85,7 @@ body {
 }
 
 #tagline {
-	margin: 0px 0px 80px 0px;
+	margin: 0px 0px 100px 0px;
 }
 
 .form-group {
@@ -96,12 +96,14 @@ body {
 
 #startButton {
 	margin: -50px 0px 100px 0px;
+	padding-bottom: 55px;
+	margin-top: -40px;
 }
 
 #logo {
 	font-family: 'Pacifico', cursive;
 	margin-top: -50px;
-	padding-top: 30px;
+	padding-top: 10px;
 }
 
 .navbar-brand {
