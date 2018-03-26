@@ -12,7 +12,7 @@ class ResultsAnimal extends Component {
 		this.state = {
 			pets: [],
 			locationArg: '11211',
-			numResults : '5',
+			numResults : '25',
 			sizeResults : '',
 			animalSex : '',
 			animalType: '',

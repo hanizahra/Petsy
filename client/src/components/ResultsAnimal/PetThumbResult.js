@@ -16,6 +16,7 @@ class PetThumbResult extends Component {
 	addToPetsList() {
 		apiServices.addToPetsList(this.props.pet)
 		alert('pet added to favorites')
+
 		console.log('about to be added to julius kick ass database===>', this.props.pet)
 	}
 	render () {

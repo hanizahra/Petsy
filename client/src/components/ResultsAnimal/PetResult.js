@@ -4,7 +4,7 @@ import PetCarousel from './Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import {React_Bootstrap_Carousel} from 'react-bootstrap-carousel';
-import {Button, Pager, Panel} from 'react-bootstrap';
+import {Button, Pager, Panel, ButtonToolbar} from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons';
 import ResultsAnimal from './ResultsAnimal';
 
@@ -133,7 +133,9 @@ class PetResult extends Component {
 					    </Panel.Body>
 					</Panel>
 				</div>
-				<Button href="/results">Search again!</Button>
+				<ButtonToolbar>
+					<Button href="/results">Search again!</Button>
+				</ButtonToolbar>
 				<ShareButton
                 compact
                 socialMedia={'facebook'}

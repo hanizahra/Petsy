@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices';
 import ShareButton from 'react-social-share-buttons';
 import RandomCarousel from './RandomCarousel';
-import { Panel, Button, ButtonGroup } from 'react-bootstrap';
+import { Panel, Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap';
 
 class RandomAnimal extends Component {
 
@@ -174,10 +174,12 @@ class RandomAnimal extends Component {
 					    </Panel.Body>
 					 </Panel>
 				</div>
-				<ButtonGroup>
-				  	<Button onClick={this.newAnimal}>Feeling Lucky?</Button>
-				  	<Button onClick={this.addToPetsList}><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Save</Button>
-				</ButtonGroup>
+				<ButtonToolbar>
+					<ButtonGroup>
+					  	<Button onClick={this.newAnimal}>Feeling Lucky?</Button>
+					  	<Button onClick={this.addToPetsList}><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Save</Button>
+					</ButtonGroup>
+				</ButtonToolbar>
 				<ShareButton
                 compact
                 socialMedia={'facebook'}
