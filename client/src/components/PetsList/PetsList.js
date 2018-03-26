@@ -37,8 +37,26 @@ class PetsList extends Component {
     return(
         <div>
           {this.state.apiDataLoaded ? this.renderPets() : ''}
+<<<<<<< HEAD
           <footer><p><Facebook /> 
                 <Twitter /></p></footer>
+=======
+          <ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this cat"
+            /> <br/>
+            
+            <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            />  
+>>>>>>> 89f87b237e25289d847f2d58a630e256989b826a
         </div>
       )
   }

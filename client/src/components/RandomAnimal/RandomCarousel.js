@@ -11,7 +11,7 @@ class RandomCarousel extends Component {
 		super(props)
 	}
 
-  render() {
+  	render() {
 
 		let id;
 		let photos = [];

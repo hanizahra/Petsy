@@ -4,12 +4,17 @@ import PetCarousel from './Carousel';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap-carousel/dist/react-bootstrap-carousel.css';
 import {React_Bootstrap_Carousel} from 'react-bootstrap-carousel';
+<<<<<<< HEAD
 
 import Facebook from '../Social/Facebook';
 import Twitter from '../Social/Twitter';
 
 import {Button, Pager, Panel} from 'react-bootstrap';
 
+=======
+import {Button, Pager, Panel, ButtonToolbar} from 'react-bootstrap';
+import ShareButton from 'react-social-share-buttons';
+>>>>>>> 89f87b237e25289d847f2d58a630e256989b826a
 import ResultsAnimal from './ResultsAnimal';
 
 
@@ -138,6 +143,7 @@ class PetResult extends Component {
 					    </Panel.Body>
 					</Panel>
 				</div>
+<<<<<<< HEAD
 
 				<button onClick={this.newAnimal}>New Pet</button>
 				<footer><p><Facebook /> 
@@ -145,6 +151,26 @@ class PetResult extends Component {
 
 				<Button href="/results">Search again!</Button>
 				
+=======
+				<ButtonToolbar>
+					<Button href="/results">Search again!</Button>
+				</ButtonToolbar>
+				<ShareButton
+                compact
+                socialMedia={'facebook'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adobt this cat"
+            /> <br/>
+            
+            <ShareButton
+                compact
+                socialMedia={'twitter'}
+                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
+                media={"https://brianmartinezjtm.com"}
+                text="adopt this dog"
+            /> 
+>>>>>>> 89f87b237e25289d847f2d58a630e256989b826a
 			</div>
 			)
 	}

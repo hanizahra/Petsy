@@ -1,6 +1,6 @@
 body {
-	background: url(https://pre00.deviantart.net/b216/th/pre/i/2010/129/f/4/seamless_grass_texture_by_hhh316.jpg);
-    background-size: inherit;
+/*	background: url(https://pre00.deviantart.net/b216/th/pre/i/2010/129/f/4/seamless_grass_texture_by_hhh316.jpg);
+*/    background-size: inherit;
 }
 
 .App {
@@ -13,15 +13,16 @@ body {
 	object-fit: contain;
 }
 
-#caroImage {
-	margin: auto;
-	max-height: 350px;
-	object-fit: contain;
-}
-
 #randImage {
 	margin: auto;
 	max-height: 350px;	
+	object-fit: contain;
+}
+
+#caroRandImage {
+	margin: auto;
+	max-height: 350px;	
+	object-fit: contain;
 }
 
 
@@ -48,13 +49,26 @@ body {
 .pet-thumb-results-container {
 	margin-top:2rem;
 	width:100%;
+	/*display:flex;
+	flex-flow: row wrap;*/
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .pet-thumb-result {
-	display:flex;
-	flex-flow:row nowrap;
-	border-bottom: 1px solid #ccc;
+	min-height:325px;
+	max-height:325px;
 	cursor:pointer;
-	margin-bottom:1rem;
+	margin-bottom:5rem;
+	object-fit: contain;
+}
+
+.single-well {
+	text-align: center;
+}
+
+.btn-toolbar {
+	display: flex;
+	justify-content: center;
 }
 
 .jumbotron {
@@ -62,15 +76,16 @@ body {
 	height: 50%;
 	text-align: center;
 	background-image: url("http://96.30.15.4/~stayatho/wp-content/uploads/2011/08/Pets.jpg");
-	background-position: 50% 50%;
+	background-position: 50% 120%;
+	background-size: contain !important;
 	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+	background-clip: none;
+	background-color: white !important;
+	
 }
 
 #tagline {
-	margin: 0px 0px 80px 0px;
+	margin: 0px 0px 100px 0px;
 }
 
 .form-group {
@@ -81,20 +96,46 @@ body {
 
 #startButton {
 	margin: -50px 0px 100px 0px;
+	padding-bottom: 55px;
+	margin-top: -40px;
 }
 
 #logo {
 	font-family: 'Pacifico', cursive;
-	margin-top: -30px;
-	padding-top: 30px;
+	margin-top: -50px;
+	padding-top: 10px;
 }
 
 
 .navbar-brand {
 	font-family: 'Pacifico', cursive;
+	color: yellow;
+}
+
+.navbar{ 
+	font-family: 'IBM Plex Sans', sans-serif;
+	border-radius: 0px !important;
 }
 
 h3 {
+	text-align: center;
+}
+
+.pet-list-well {
+	text-align: center;
+	margin-top:2rem;
+	width:100%;
+	/*display:flex;
+	flex-flow: row wrap;*/
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.pet-list{
+	float: right;
+}
+
+h2 {
 	text-align: center;
 }
 
@@ -110,9 +151,14 @@ ul {
 }
 
 .thumbnail {
-	float: left;
-    margin-right: 10px;
-    height: 100%;
+	margin-right: 10px;
+   
+}
+.thumbnail img
+{
+	object-fit: cover !important;
+	width:100% !important;
+	height:250px !important;	
 }
 
 .row.display-flex {

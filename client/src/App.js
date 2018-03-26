@@ -12,6 +12,7 @@ import PetsList from './components/PetsList/PetsList';
 import Pet from './components/PetsList/Pet';
 import PetSingle from "components/PetsList/PetSingle"
 import Quiz from './components/Quiz/Quiz';
+import Footer from './components/Homepage/Footer';
 
 const particlesOptions = {
   particles: {
@@ -30,8 +31,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Particles className='particles'
-          params={particlesOptions} />
           <Navigation />
           <Container fluid className='mt-3'>
             <Route exact path='/' component={Homepage} />
@@ -42,6 +41,7 @@ class App extends Component {
             <Route exact path='/petsingle/:id' component={PetSingle} />
             <Route path='/quiz' component={Quiz} />
           </Container>
+          <Footer />
         </div>
       </Router>
     );

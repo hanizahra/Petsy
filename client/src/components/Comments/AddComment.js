@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices'
+import { Button, ButtonToolbar, Form, FormGroup, FormControl } from 'react-bootstrap';
 
 class AddComment extends Component {
 	constructor(props){
@@ -34,7 +35,7 @@ class AddComment extends Component {
 					</textarea>
 					<input type='hidden' name='pet_id' value='this.props.petId' />
 					<br/>	
-					<button>Submit</button>
+					<Button bsStyle="primary" className="btn btn-primary btn-large centerButton" type="submit">Submit</Button>
 				</form>
 			</div>
 		)
