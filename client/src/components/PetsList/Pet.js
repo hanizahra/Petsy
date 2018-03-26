@@ -82,8 +82,7 @@ render() {
         <Link className="seeMore" to={`/petsingle/${this.props.pets.id}`}>See more</Link>
       </Well>
       {this.state.fireRedirect ? <Redirect to='/petsList' /> : ''}
-      <footer><p><Facebook />
-      <Twitter /></p></footer>  
+       
     </div>
     )
   }
