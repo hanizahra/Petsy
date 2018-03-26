@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import PetResult from './PetResult';
 import PetThumbResult from './PetThumbResult';
 import PetCarousel from './Carousel';
-<<<<<<< HEAD
+
 import Facebook from '../Social/Facebook';
 import Twitter from '../Social/Twitter';
-import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button } from 'react-bootstrap';
-=======
+
 import { Well, Form, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button, Pager } from 'react-bootstrap';
-import ShareButton from 'react-social-share-buttons';
->>>>>>> 577b00582943765e1c00c15009999600614829b6
+
+
 
 class ResultsAnimal extends Component {
 

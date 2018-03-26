@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
+
     "@fortawesome/fontawesome": "^1.1.4",
     "@fortawesome/react-fontawesome": "^0.0.18",
-=======
+
     "add": "^2.0.6",
->>>>>>> 577b00582943765e1c00c15009999600614829b6
+
     "axios": "^0.18.0",
     "bootstrap": "3",
     "react": "^16.2.0",
@@ -19,12 +19,11 @@
     "react-responsive-carousel": "^3.1.33",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
-<<<<<<< HEAD
+
     "react-social-sharebuttons": "^2.1.4",
-=======
+
     "react-slick": "^0.22.2",
-    "react-social-share-buttons": "^1.0.2",
->>>>>>> 577b00582943765e1c00c15009999600614829b6
+
     "reactstrap": "^5.0.0-beta.3",
     "slick-carousel": "^1.8.1",
     "tachyons": "^4.9.1",

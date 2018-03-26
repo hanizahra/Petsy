@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices'
 import Comments from '../Comments/Comments'
-<<<<<<< HEAD
+
 import Facebook from '../Social/Facebook';
 import Twitter from '../Social/Twitter';
-=======
+
 import ShareButton from 'react-social-share-buttons';
 import { Redirect } from 'react-router-dom';
->>>>>>> 577b00582943765e1c00c15009999600614829b6
+
 
 class PetSingle extends Component {
 	constructor(){
@@ -61,10 +61,10 @@ class PetSingle extends Component {
 			<p><strong>Id: </strong>{pet.id}</p>
 			<Comments petId={this.props.match.params.id}/>
           	<button onClick={this.deletePet}>Delete Pet</button>
-<<<<<<< HEAD
+
           	<footer><p><Facebook /> 
                 <Twitter /></p></footer>
-=======
+
           	{this.state.fireRedirect ? <Redirect to='/petslist' /> : ''}
           	<ShareButton
                 compact

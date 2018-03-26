@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import apiServices from '../../apiServices/apiServices';
-<<<<<<< HEAD
 import Facebook from '../Social/Facebook';
 import Twitter from '../Social/Twitter';
-=======
-import ShareButton from 'react-social-share-buttons';
+
 import RandomCarousel from './RandomCarousel';
 import { Panel, Button, ButtonGroup } from 'react-bootstrap';
->>>>>>> 577b00582943765e1c00c15009999600614829b6
+
 
 class RandomAnimal extends Component {
 
@@ -179,32 +177,18 @@ class RandomAnimal extends Component {
 					    </Panel.Body>
 					 </Panel>
 				</div>
-<<<<<<< HEAD
+
 				<button onClick={this.newAnimal}>New Pet</button>
 				<button onClick={this.addToPetsList}>Add to Favoritos</button>
 				<footer><p><Facebook /> 
                 <Twitter /></p></footer>
-=======
+
 				<ButtonGroup>
 				  	<Button onClick={this.newAnimal}>Feeling Lucky?</Button>
 				  	<Button onClick={this.addToPetsList}><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Save</Button>
 				</ButtonGroup>
-				<ShareButton
-                compact
-                socialMedia={'facebook'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adobt this cat"
-            /> <br/>
-            
-            <ShareButton
-                compact
-                socialMedia={'twitter'}
-                url={"https://brian-martinez-portfolio.herokuapp.com/index.html"}
-                media={"https://brianmartinezjtm.com"}
-                text="adopt this dog"
-            /> 
->>>>>>> 577b00582943765e1c00c15009999600614829b6
+				
+
 			</div>
 			)
 	}
