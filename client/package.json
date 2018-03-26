@@ -28,5 +28,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://enigmatic-shore-79687.herokuapp.com"
+  "proxy": "localhost:3001"
 }
